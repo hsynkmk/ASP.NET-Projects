@@ -19,36 +19,39 @@ namespace Credit_Card_Verification
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-            // Get the credit card number, CCV number, and expiration date entered by the user
+            InfoLabel.ForeColor = System.Drawing.Color.Red;
+            // Card number, CCV number, and expiration date entered by the user
             string cardNumber = CardNoTextBox.Text.Trim();
-            string ccvNumber = CVCTextBox.Text.Trim();
+            string cvcNumber = CVCTextBox.Text.Trim();
             int expirationMonth = int.Parse(MonthDropDownList.SelectedValue);
             int expirationYear = int.Parse(YearDropDownList.SelectedValue);
 
-            // Validate the credit card number
+            // VALIDATION
+            // No card number provided
             if (string.IsNullOrEmpty(cardNumber))
             {
-                // No card number provided
-                lblError.Text = "No card number provided";
+                InfoLabel.Text = "No card number provided";
                 return;
             }
 
-            // Determine the card type based on the first digit of the card number
+
+            // Card type based on the first digit
             string cardType = "";
+
+            // Visa card
             if (cardNumber.StartsWith("4"))
             {
-                // Visa card
                 cardType = "Visa";
             }
+            // MasterCard
             else if (cardNumber.StartsWith("5"))
             {
-                // MasterCard
                 cardType = "MasterCard";
             }
+            // Unknown card type
             else
             {
-                // Unknown card type
-                lblError.Text = "Unknown card type";
+                InfoLabel.Text = "Unknown card type";
                 return;
             }
 
@@ -67,7 +70,7 @@ namespace Credit_Card_Verification
             if (!regex.IsMatch(cardNumber))
             {
                 // Credit card number is in invalid format
-                lblError.Text = "Credit card number is in invalid format";
+                InfoLabel.Text = "Credit card number is in invalid format";
                 return;
             }
 
@@ -75,16 +78,16 @@ namespace Credit_Card_Verification
             if (!ValidateCreditCardNumber(cardNumber))
             {
                 // Credit card number is invalid
-                lblError.Text = "Credit card number is invalid";
+                InfoLabel.Text = "Credit card number is invalid";
                 return;
             }
 
             // Validate the CCV number format and length
             regex = new Regex("^[0-9]{3,4}$");
-            if (!regex.IsMatch(ccvNumber))
+            if (!regex.IsMatch(cvcNumber))
             {
                 // CCV number is invalid
-                lblError.Text = "CCV number is invalid";
+                InfoLabel.Text = "CCV number is invalid";
                 return;
             }
 
@@ -93,13 +96,13 @@ namespace Credit_Card_Verification
             if (expirationDate < DateTime.Now)
             {
                 // Expiration date is invalid
-                lblError.Text = "Expiration date is invalid";
+                InfoLabel.Text = "Expiration date is invalid";
                 return;
             }
 
             // All credit card information entered by the user is valid, display the card image and number
-            imgCard.ImageUrl = "https://img.aydinlik.com.tr/rcman/Cw1280h720q95gc/storage/files/images/2022/03/06/visa-ve-mastercarddan-rusya-karari-nuuL.jpg"; //$"~/Images/{cardType}.png";
-            //lblCardNumber.Text = cardNumber;
+            InfoLabel.ForeColor = System.Drawing.Color.Green;
+            InfoLabel.Text = "SUCCESSFUL";
         }
         private bool ValidateCreditCardNumber(string cardNumber)
         {
@@ -130,7 +133,22 @@ namespace Credit_Card_Verification
             return sum % 10 == 0;
         }
 
+        protected void CardNoTextBox_TextChanged(object sender, EventArgs e)
+        {
 
+            string cardNumber = CardNoTextBox.Text.Trim();
+            CardNoOnImage.Text = cardNumber;
+            if (cardNumber.StartsWith("4"))
+            {
+                // Visa card
+                imgCard.ImageUrl = "https://cdn.visa.com/v2/assets/images/logos/visa/blue/logo.png";
+            }
+            else if (cardNumber.StartsWith("5"))
+            {
+                // MasterCard
+                imgCard.ImageUrl = "https://1000logos.net/wp-content/uploads/2017/03/MasterCard-Logo-1996-768x432.png";
+            }
 
+        }
     }
 }

@@ -60,6 +60,15 @@ namespace Credit_Card_Verification
         protected global::System.Web.UI.WebControls.TextBox CardNoTextBox;
 
         /// <summary>
+        /// imgCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgCard;
+
+        /// <summary>
         /// MonthLabel control.
         /// </summary>
         /// <remarks>
@@ -123,21 +132,30 @@ namespace Credit_Card_Verification
         protected global::System.Web.UI.WebControls.Button SubmitButton;
 
         /// <summary>
-        /// lblError control.
+        /// InfoLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
+        protected global::System.Web.UI.WebControls.Label InfoLabel;
 
         /// <summary>
-        /// imgCard control.
+        /// Image1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgCard;
+        protected global::System.Web.UI.WebControls.Image Image1;
+
+        /// <summary>
+        /// CardNoOnImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CardNoOnImage;
     }
 }
