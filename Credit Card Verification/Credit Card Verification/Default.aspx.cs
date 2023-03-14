@@ -19,21 +19,37 @@ namespace Credit_Card_Verification
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-            InfoLabel.ForeColor = System.Drawing.Color.Red;
-            // Card number, CCV number, and expiration date entered by the user
-            string cardNumber = CardNoTextBox.Text.Trim();
-            string cvcNumber = CVCTextBox.Text.Trim();
-            int expirationMonth = int.Parse(MonthDropDownList.SelectedValue);
-            int expirationYear = int.Parse(YearDropDownList.SelectedValue);
+            infoLabel.ForeColor = System.Drawing.Color.Red;
 
-            // VALIDATION
-            // No card number provided
-            if (string.IsNullOrEmpty(cardNumber))
+            // Card number, CCV number, and expiration date entered by the user
+            string name = nameSurnameTextBox.Text.Trim().ToLower();
+            string cardNumber = cardNoTextBox.Text.Trim();
+            string cvcNumber = cvcTextBox.Text.Trim();
+            int expirationMonth = int.Parse(monthDropDownList.SelectedValue);
+            int expirationYear = int.Parse(yearDropDownList.SelectedValue);
+            Regex regex;
+
+
+            // VALIDATIONS
+
+            
+
+            regex = new Regex(@"^[a-zA-ZığüşöçĞÜŞÖÇ]+(([\s\-][a-zA-ZığüşöçĞÜŞÖÇ]+)*)$");
+
+
+            // Name is in invalid format
+            if (!regex.IsMatch(name))
             {
-                InfoLabel.Text = "No card number provided";
+                infoLabel.Text = "Name is in invalid format";
                 return;
             }
 
+            // No card number provided
+            if (string.IsNullOrEmpty(cardNumber))
+            {
+                infoLabel.Text = "No card number provided";
+                return;
+            }
 
             // Card type based on the first digit
             string cardType = "";
@@ -51,34 +67,37 @@ namespace Credit_Card_Verification
             // Unknown card type
             else
             {
-                InfoLabel.Text = "Unknown card type";
+                infoLabel.Text = "Unknown card type";
                 return;
             }
+
+
 
             // Validate the credit card number format and length
-            Regex regex;
+            // Visa card format: 16 digits
             if (cardType == "Visa")
             {
-                // Visa card format: 16 digits
                 regex = new Regex("^4[0-9]{15}$");
             }
+
+            // MasterCard format: 16 digits
             else
             {
-                // MasterCard format: 16 digits
                 regex = new Regex("^5[1-5][0-9]{14}$");
             }
+
+            // Credit card number is in invalid format
             if (!regex.IsMatch(cardNumber))
             {
-                // Credit card number is in invalid format
-                InfoLabel.Text = "Credit card number is in invalid format";
+                infoLabel.Text = "Credit card number is in invalid format";
                 return;
             }
 
-            // Validate the credit card number using Luhn algorithm
+            // Validation of the credit card number using Luhn algorithm
             if (!ValidateCreditCardNumber(cardNumber))
             {
                 // Credit card number is invalid
-                InfoLabel.Text = "Credit card number is invalid";
+                infoLabel.Text = "Credit card number is invalid";
                 return;
             }
 
@@ -86,8 +105,7 @@ namespace Credit_Card_Verification
             regex = new Regex("^[0-9]{3,4}$");
             if (!regex.IsMatch(cvcNumber))
             {
-                // CCV number is invalid
-                InfoLabel.Text = "CCV number is invalid";
+                infoLabel.Text = "CCV number is invalid";
                 return;
             }
 
@@ -95,15 +113,16 @@ namespace Credit_Card_Verification
             DateTime expirationDate = new DateTime(expirationYear, expirationMonth, 1).AddMonths(1).AddDays(-1);
             if (expirationDate < DateTime.Now)
             {
-                // Expiration date is invalid
-                InfoLabel.Text = "Expiration date is invalid";
+                infoLabel.Text = "Expiration date is invalid";
                 return;
             }
 
-            // All credit card information entered by the user is valid, display the card image and number
-            InfoLabel.ForeColor = System.Drawing.Color.Green;
-            InfoLabel.Text = "SUCCESSFUL";
+            // All credit card information entered by the user is valid
+            infoLabel.ForeColor = System.Drawing.Color.Green;
+            infoLabel.Text = "SUCCESSFUL";
         }
+
+        //Luhn algorithm
         private bool ValidateCreditCardNumber(string cardNumber)
         {
             // Reverse the credit card number and convert each digit to an integer
@@ -136,8 +155,8 @@ namespace Credit_Card_Verification
         protected void CardNoTextBox_TextChanged(object sender, EventArgs e)
         {
 
-            string cardNumber = CardNoTextBox.Text.Trim();
-            CardNoOnImage.Text = cardNumber;
+            string cardNumber = cardNoTextBox.Text.Trim();
+            cardNoOnImage.Text = cardNumber;
             if (cardNumber.StartsWith("4"))
             {
                 // Visa card
@@ -149,6 +168,21 @@ namespace Credit_Card_Verification
                 imgCard.ImageUrl = "https://1000logos.net/wp-content/uploads/2017/03/MasterCard-Logo-1996-768x432.png";
             }
 
+        }
+
+        protected void MonthDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            exDateOnImg.Text = monthDropDownList.SelectedValue + "/" + yearDropDownList.SelectedValue.ElementAt(2) + yearDropDownList.SelectedValue.ElementAt(3);
+        }
+
+        protected void YearDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            exDateOnImg.Text = monthDropDownList.SelectedValue + "/" + yearDropDownList.SelectedValue.ElementAt(2) + yearDropDownList.SelectedValue.ElementAt(3);
+        }
+
+        protected void NameSurnameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            nameOnImg.Text = nameSurnameTextBox.Text;
         }
     }
 }

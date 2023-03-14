@@ -24,40 +24,31 @@ namespace Credit_Card_Verification
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// NameSurnameLabel control.
+        /// cardTemplateImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NameSurnameLabel;
+        protected global::System.Web.UI.WebControls.Image cardTemplateImg;
 
         /// <summary>
-        /// NameSurnameTextBox control.
+        /// nameOnImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NameSurnameTextBox;
+        protected global::System.Web.UI.WebControls.Label nameOnImg;
 
         /// <summary>
-        /// CardNoLabel control.
+        /// cardNoOnImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CardNoLabel;
-
-        /// <summary>
-        /// CardNoTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CardNoTextBox;
+        protected global::System.Web.UI.WebControls.Label cardNoOnImage;
 
         /// <summary>
         /// imgCard control.
@@ -69,6 +60,51 @@ namespace Credit_Card_Verification
         protected global::System.Web.UI.WebControls.Image imgCard;
 
         /// <summary>
+        /// exDateOnImg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label exDateOnImg;
+
+        /// <summary>
+        /// NameSurnameLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NameSurnameLabel;
+
+        /// <summary>
+        /// nameSurnameTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nameSurnameTextBox;
+
+        /// <summary>
+        /// CardNoLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CardNoLabel;
+
+        /// <summary>
+        /// cardNoTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox cardNoTextBox;
+
+        /// <summary>
         /// MonthLabel control.
         /// </summary>
         /// <remarks>
@@ -78,13 +114,13 @@ namespace Credit_Card_Verification
         protected global::System.Web.UI.WebControls.Label MonthLabel;
 
         /// <summary>
-        /// MonthDropDownList control.
+        /// monthDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList MonthDropDownList;
+        protected global::System.Web.UI.WebControls.DropDownList monthDropDownList;
 
         /// <summary>
         /// YearLabel control.
@@ -96,13 +132,13 @@ namespace Credit_Card_Verification
         protected global::System.Web.UI.WebControls.Label YearLabel;
 
         /// <summary>
-        /// YearDropDownList control.
+        /// yearDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList YearDropDownList;
+        protected global::System.Web.UI.WebControls.DropDownList yearDropDownList;
 
         /// <summary>
         /// CVCLabel control.
@@ -114,48 +150,30 @@ namespace Credit_Card_Verification
         protected global::System.Web.UI.WebControls.Label CVCLabel;
 
         /// <summary>
-        /// CVCTextBox control.
+        /// cvcTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CVCTextBox;
+        protected global::System.Web.UI.WebControls.TextBox cvcTextBox;
 
         /// <summary>
-        /// SubmitButton control.
+        /// submitButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SubmitButton;
+        protected global::System.Web.UI.WebControls.Button submitButton;
 
         /// <summary>
-        /// InfoLabel control.
+        /// infoLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label InfoLabel;
-
-        /// <summary>
-        /// Image1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
-
-        /// <summary>
-        /// CardNoOnImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CardNoOnImage;
+        protected global::System.Web.UI.WebControls.Label infoLabel;
     }
 }

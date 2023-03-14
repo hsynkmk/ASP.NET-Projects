@@ -12,7 +12,6 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f5f5f5;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,20 +21,17 @@
             background-size: cover;
         }
 
+        h1 {
+            text-align: center;
+        }
+
         form {
             margin-top: 20px;
             margin-bottom: 20px;
         }
 
-        .info-label {
-            text-align: center;
-            color: red;
-        }
-
-        .payment-container {
-            width: 400px;
-            background: #fff;
-            padding: 30px;
+        .paymentContainer {
+            background-color: white;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
@@ -47,7 +43,30 @@
             color: #333;
         }
 
-        #SubmitButton {
+        .textBox,
+        .Dropdown {
+            border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            padding: 7px;
+            border-radius: 5px;
+            background: #f5f5f5;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .cardDetails {
+            display: flex;
+            justify-content: space-between;
+        }
+
+            .cardDetails Dropdown {
+                width: 48%;
+                margin-right: 4%;
+            }
+
+        #submitButton {
             display: block;
             width: 100%;
             padding: 10px;
@@ -64,66 +83,97 @@
                 background: #4cae4c;
             }
 
-        .TextBox,
-        .Dropdown {
-            border-style: none;
-            border-color: inherit;
-            border-width: medium;
-            padding: 7px;
-            border-radius: 5px;
-            background: #f5f5f5;
-            margin-bottom: 5px;
-            font-size: 16px;
-            color: #333;
+        .cardImage {
+            width: 50%;
+            float: left;
+            padding: 20px;
+            position: relative;
         }
 
-        .card-details {
-            display: flex;
-            justify-content: space-between;
-        }
 
-            .card-details Dropdown {
-                width: 48%;
-                margin-right: 4%;
-            }
+        .nameOnImage {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: left;
+            position: absolute;
+            top: 40%;
+            right: 42%;
+            transform: translate(50%, -50%);
+        }
 
         .cardNoOnImage {
             font-weight: bold;
-            font-size: 26px;
+            font-size: 24px;
             padding: 20px;
-            text-align: center;
+            text-align: left;
             position: absolute;
-            top: 75%;
+            top: 60%;
             right: 50%;
             transform: translate(50%, -50%);
         }
 
-        .CardImage {
+        .exDateOnImage {
+            font-weight: bold;
+            font-size: 20px;
+            padding: 20px;
+            text-align: left;
+            position: absolute;
+            top: 75%;
+            right: 75%;
+            transform: translate(50%, -50%);
+        }
+
+        .cardTypeImg {
+            padding: 10px;
+            text-align: right;
+            position: absolute;
+            top: 68%;
+            right: 7%;
+        }
+
+        .infoLabel {
             text-align: center;
-            position: relative;
+            color: red;
         }
     </style>
 
 
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div class="payment-container">
+    <form class="paymentContainer" id="form1" runat="server">
+        <div>
             <h1>Save a Credit Card</h1>
-            <form>
 
-                <asp:Label ID="NameSurnameLabel" runat="server" Text="Name-Surname" CssClass="label"></asp:Label><br />
-                <asp:TextBox ID="NameSurnameTextBox" runat="server" Width="260px" CssClass="TextBox"></asp:TextBox>
+            <div class="cardImage">
+                <div>
+                    <asp:Image ID="cardTemplateImg" runat="server" Height="215px" ImageUrl="https://t4.ftcdn.net/jpg/01/47/93/11/240_F_147931159_ryJYRNxSWGf2Ub8YSz9v5DLCF1ki7jWo.jpg" Width="315px" />
+                </div>
+                <div>
+                    <asp:Label ID="nameOnImg" runat="server" CssClass="nameOnImage"></asp:Label>
+                </div>
+                <div>
+                    <asp:Label ID="cardNoOnImage" runat="server" CssClass="cardNoOnImage"></asp:Label>
+                </div>
+                <div class="cardTypeImg">
+                    <asp:Image ID="imgCard" runat="server" Width="38px" />
+                </div>
+                <div>
+                    <asp:Label ID="exDateOnImg" runat="server" CssClass="exDateOnImage"></asp:Label>
+                </div>
+            </div>
+            <div class="cardImage">
+                <asp:Label ID="NameSurnameLabel" runat="server" Text="Name-Surname" CssClass="label"></asp:Label>
+                <asp:TextBox ID="nameSurnameTextBox" runat="server" Width="260px" CssClass="textBox" AutoPostBack="True" OnTextChanged="NameSurnameTextBox_TextChanged"></asp:TextBox>
 
-                <asp:Label ID="CardNoLabel" runat="server" Text="Card No" CssClass="label"></asp:Label><br />
-                <asp:TextBox ID="CardNoTextBox" runat="server" CssClass="TextBox" Width="260px" OnTextChanged="CardNoTextBox_TextChanged" AutoPostBack="True"></asp:TextBox>
+                <asp:Label ID="CardNoLabel" runat="server" Text="Card No" CssClass="label"></asp:Label>
+                <asp:TextBox ID="cardNoTextBox" runat="server" CssClass="textBox" Width="260px" OnTextChanged="CardNoTextBox_TextChanged" AutoPostBack="True"></asp:TextBox>
 
-                <asp:Image ID="imgCard" runat="server" Width="38px" />
 
-                <div class="card-details">
+
+                <div class="cardDetails">
                     <div>
-                        <asp:Label ID="MonthLabel" runat="server" Text="Month" CssClass="label"></asp:Label><br />
-                        <asp:DropDownList ID="MonthDropDownList" runat="server" Width="152px" CssClass="Dropdown">
+                        <asp:Label ID="MonthLabel" runat="server" Text="Month" CssClass="label"></asp:Label>
+                        <asp:DropDownList ID="monthDropDownList" runat="server" Width="129px" CssClass="Dropdown" AutoPostBack="True" OnSelectedIndexChanged="MonthDropDownList_SelectedIndexChanged">
                             <asp:ListItem>1</asp:ListItem>
                             <asp:ListItem>2</asp:ListItem>
                             <asp:ListItem>3</asp:ListItem>
@@ -140,34 +190,31 @@
                     </div>
 
                     <div>
-                        <asp:Label ID="YearLabel" runat="server" Text="Year" CssClass="label"></asp:Label><br />
-                        <asp:DropDownList ID="YearDropDownList" runat="server" Width="152px" CssClass="Dropdown">
+                        <asp:Label ID="YearLabel" runat="server" Text="Year" CssClass="label"></asp:Label>
+                        <asp:DropDownList ID="yearDropDownList" runat="server" Width="129px" CssClass="Dropdown" AutoPostBack="True" OnSelectedIndexChanged="YearDropDownList_SelectedIndexChanged">
                             <asp:ListItem>2024</asp:ListItem>
                             <asp:ListItem>2025</asp:ListItem>
                             <asp:ListItem>2026</asp:ListItem>
                             <asp:ListItem>2027</asp:ListItem>
                             <asp:ListItem>2028</asp:ListItem>
+                            <asp:ListItem>2029</asp:ListItem>
+                            <asp:ListItem>2030</asp:ListItem>
                         </asp:DropDownList>
                     </div>
 
                 </div>
 
-                <asp:Label ID="CVCLabel" runat="server" Text="CVC" CssClass="label"></asp:Label><br />
-                <asp:TextBox ID="CVCTextBox" runat="server" CssClass="TextBox" Width="105px"></asp:TextBox>
+                <asp:Label ID="CVCLabel" runat="server" Text="CVC" CssClass="label"></asp:Label>
+                <asp:TextBox ID="cvcTextBox" runat="server" CssClass="textBox" Width="105px"></asp:TextBox>
 
-                <asp:Button ID="SubmitButton" runat="server" Text="Submit" OnClick="SubmitButton_Click" /><br />
-                <asp:Label ID="InfoLabel" runat="server" CssClass="info-label"></asp:Label>
-                <div class="CardImage">
-                    <asp:Image ID="Image1" runat="server" Height="172px" ImageUrl="https://cdn.pixabay.com/photo/2012/04/01/12/42/credit-card-23250_960_720.png" Width="291px" />
-                    <div>
-                        <asp:Label ID="CardNoOnImage" runat="server" CssClass="cardNoOnImage"></asp:Label>
-                    </div>
-                </div>
-            </form>
+                <asp:Button ID="submitButton" runat="server" Text="Submit" OnClick="SubmitButton_Click" />
+                <asp:Label ID="infoLabel" runat="server" CssClass="infoLabel"></asp:Label>
+
+            </div>
         </div>
 
         &nbsp;
-                
+               
     </form>
 
 </body>
