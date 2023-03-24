@@ -14,7 +14,30 @@ namespace Credit_Card_Verification
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Setting the current date and time
+            if (!IsPostBack)
+            {
+                // Get current year
+                int currentYear = DateTime.Now.Year;
 
+                // Populate month dropdownlist control with 12 months of the year
+                for (int i = DateTime.Now.Month; i <= 12; i++)
+                {
+                    ListItem li = new ListItem();
+                    li.Text = i.ToString("00");
+                    li.Value = i.ToString();
+                    monthDropDownList.Items.Add(li);
+                }
+
+                // Populate year dropdownlist control with next 10 years
+                for (int i = 0; i < 10; i++)
+                {
+                    ListItem li = new ListItem();
+                    li.Text = (currentYear + i).ToString();
+                    li.Value = (currentYear + i).ToString();
+                    yearDropDownList.Items.Add(li);
+                }
+            }
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
@@ -32,7 +55,7 @@ namespace Credit_Card_Verification
 
             // VALIDATIONS
 
-            
+
 
             regex = new Regex(@"^[a-zA-ZığüşöçĞÜŞÖÇ]+(([\s\-][a-zA-ZığüşöçĞÜŞÖÇ]+)*)$");
 
@@ -178,6 +201,19 @@ namespace Credit_Card_Verification
         protected void YearDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
             exDateOnImg.Text = monthDropDownList.SelectedValue + "/" + yearDropDownList.SelectedValue.ElementAt(2) + yearDropDownList.SelectedValue.ElementAt(3);
+            
+
+            //Adding previous months to the dropdownlist for next years
+            if(monthDropDownList.Items[0].Text != "01" && int.Parse(yearDropDownList.SelectedValue) > DateTime.Now.Year)
+            {
+                for (int i = 1; i < DateTime.Now.Month; i++)
+                {
+                    ListItem li = new ListItem();
+                    li.Text = i.ToString("00");
+                    li.Value = i.ToString();
+                    monthDropDownList.Items.Insert(i - 1, li);
+                }
+            }
         }
 
         protected void NameSurnameTextBox_TextChanged(object sender, EventArgs e)
