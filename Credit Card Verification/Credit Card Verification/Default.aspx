@@ -174,31 +174,12 @@
                     <div>
                         <asp:Label ID="MonthLabel" runat="server" Text="Month" CssClass="label"></asp:Label>
                         <asp:DropDownList ID="monthDropDownList" runat="server" Width="129px" CssClass="Dropdown" AutoPostBack="True" OnSelectedIndexChanged="MonthDropDownList_SelectedIndexChanged">
-                            <asp:ListItem>1</asp:ListItem>
-                            <asp:ListItem>2</asp:ListItem>
-                            <asp:ListItem>3</asp:ListItem>
-                            <asp:ListItem>4</asp:ListItem>
-                            <asp:ListItem>5</asp:ListItem>
-                            <asp:ListItem>6</asp:ListItem>
-                            <asp:ListItem>7</asp:ListItem>
-                            <asp:ListItem>8</asp:ListItem>
-                            <asp:ListItem>9</asp:ListItem>
-                            <asp:ListItem>10</asp:ListItem>
-                            <asp:ListItem>11</asp:ListItem>
-                            <asp:ListItem>12</asp:ListItem>
                         </asp:DropDownList>
                     </div>
 
                     <div>
                         <asp:Label ID="YearLabel" runat="server" Text="Year" CssClass="label"></asp:Label>
                         <asp:DropDownList ID="yearDropDownList" runat="server" Width="129px" CssClass="Dropdown" AutoPostBack="True" OnSelectedIndexChanged="YearDropDownList_SelectedIndexChanged">
-                            <asp:ListItem>2024</asp:ListItem>
-                            <asp:ListItem>2025</asp:ListItem>
-                            <asp:ListItem>2026</asp:ListItem>
-                            <asp:ListItem>2027</asp:ListItem>
-                            <asp:ListItem>2028</asp:ListItem>
-                            <asp:ListItem>2029</asp:ListItem>
-                            <asp:ListItem>2030</asp:ListItem>
                         </asp:DropDownList>
                     </div>
 
