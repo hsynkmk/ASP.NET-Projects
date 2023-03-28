@@ -37,5 +37,15 @@ namespace Hangman
             reader.Close();
             return word;
         }
+        public static string GetHint(string word)
+        {
+            SqlCommand getHintComm = new SqlCommand("SELECT Hint FROM Words WHERE Name = @word", connection);
+            getHintComm.Parameters.AddWithValue("@word", word);
+            SqlDataReader reader = getHintComm.ExecuteReader();
+            reader.Read();
+            string hint = reader.GetString(0);
+            reader.Close();
+            return hint;
+        }
     }
 }

@@ -33,6 +33,15 @@ namespace Hangman
         protected global::System.Web.UI.WebControls.Button StartBtn;
 
         /// <summary>
+        /// Infolbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Infolbl;
+
+        /// <summary>
         /// playzone control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace Hangman
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl playzone;
+
+        /// <summary>
+        /// displayhint control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayhint;
 
         /// <summary>
         /// lblWord control.
@@ -60,6 +78,24 @@ namespace Hangman
         protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
+        /// AddItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddItem;
+
+        /// <summary>
+        /// newWordZone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl newWordZone;
+
+        /// <summary>
         /// Word control.
         /// </summary>
         /// <remarks>
@@ -78,21 +114,48 @@ namespace Hangman
         protected global::System.Web.UI.WebControls.TextBox Hint;
 
         /// <summary>
-        /// AddWordBtt control.
+        /// AddWordBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddWordBtt;
+        protected global::System.Web.UI.WebControls.Button AddWordBtn;
 
         /// <summary>
-        /// Infolbl control.
+        /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Infolbl;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+
+        /// <summary>
+        /// txtCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtCount;
+
+        /// <summary>
+        /// Timer1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.Timer Timer1;
     }
 }

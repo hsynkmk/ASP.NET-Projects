@@ -7,16 +7,47 @@
     <title>Hangman Game</title>
     <!-- Link to Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link href="Style.css" rel="stylesheet" />
+    <style>
+        body {
+            background-image: url('/Images/Backround0.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .btn-letter {
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+        }
+
+            .btn-letter:hover {
+                background-color: #f1f1f1;
+            }
+
+        #Image1 {
+            text-align: right;
+        }
+
+        .margin-bottom {
+            margin-bottom: 6em;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="container">
-            <h1>Hangman Game</h1>
-            <asp:Button ID="StartBtn" runat="server" OnClick="StartBtn_Click" Text="Start" />
+            <div class="text-center">
+                <h1>Adam Asmaca</h1>
+                <asp:Button class="btn btn-success btn-lg margin-bottom" ID="StartBtn" runat="server" OnClick="StartBtn_Click" Text="Başla" />
+                <div>
+                    <asp:Label ID="Infolbl" runat="server" Font-Size="X-Large"></asp:Label>
+                </div>
+
+            </div>
             <div runat="server" id="playzone" class="row">
                 <div class="col-md-6">
-                    <h3>Guess a Letter:</h3>
+                    <h3 runat="server" id="displayhint"></h3>
                     <div class="btn-group btn-group-lg pull-right" role="group">
                         <!-- Buttons for each letter in the alphabet -->
                         <asp:Button runat="server" CssClass="btn btn-primary btn-letter" Text="A" OnClick="LetterButton_Click" />
@@ -50,24 +81,54 @@
                         <asp:Button runat="server" CssClass="btn btn-primary btn-letter" Text="Z" OnClick="LetterButton_Click" />
                     </div>
                 </div>
+
                 <div>
                     <asp:Label ID="lblWord" runat="server" Text="" Font-Size="X-Large" />
                 </div>
                 <div style="text-align: right;">
                     <asp:Image ID="Image1" runat="server" Height="300px" ImageUrl="~/Images/0.jpg" />
                 </div>
-
             </div>
 
-            <asp:TextBox runat="server" ID="Word"></asp:TextBox>
-            <asp:TextBox runat="server" ID="Hint"></asp:TextBox>
-            <asp:Button ID="AddWordBtt" runat="server" Text="Ekle" OnClick="AddWordBtt_Click" />
+            <div class="text-center">
+                <asp:Button class="btn btn-warning" ID="AddItem" runat="server" Text="Yeni Kelime Ekle" OnClick="AddItemBtn_Click" />
+                <div runat="server" id="newWordZone" class="row">
+                    <div class="col-md-6">
+                        <asp:TextBox type="text" class="form-control mb-2" runat="server" ID="Word" placeholder="Kelime"></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <asp:TextBox type="text" class="form-control mb-2" runat="server" ID="Hint" placeholder="İpucu"></asp:TextBox>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <asp:Button class="btn btn-primary" ID="AddWordBtn" runat="server" Text="Ekle" OnClick="AddWordBtn_Click" />
+                    </div>
+                </div>
+            </div>
 
-            <asp:Label ID="Infolbl" runat="server"></asp:Label>
 
+
+
+
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <div style="padding: 25px">
+
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <asp:Label ID="txtCount" runat="server"
+                            Height="42px"
+                            Width="80px"
+                            Font-Size="XX-Large"
+                            Text=""
+                            Style="text-align: center">
+                        </asp:Label>
+                        <br />
+
+                        <asp:Timer ID="Timer1" runat="server" Enabled="False" Interval="1000" OnTick="Timer1_Tick"></asp:Timer>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                <br />
+            </div>
         </div>
-
-
     </form>
 </body>
 
