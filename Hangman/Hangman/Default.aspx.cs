@@ -14,14 +14,19 @@ namespace Hangman
     {
         protected static string SecretWord = "";
         protected static int Stage = 0;
+        protected static HtmlGenericControl bodyimg;
+
+        // Set the background color to red
+
 
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {        
             SQLClass.openConn();
             if (!IsPostBack)
             {
                 playzone.Visible = false;
                 newWordZone.Visible = false;
+                bodyimg = (HtmlGenericControl)Page.FindControl("body");
             }
 
         }
@@ -34,6 +39,8 @@ namespace Hangman
         protected void InitilizeGame()
         {
             lblWord.Text = "";
+            GIF.ImageUrl = "";
+            GIF.Visible = false;
             SecretWord = SQLClass.GetWord();
             displayhint.InnerText = SQLClass.GetHint(SecretWord);
             SecretWord = Regex.Replace(SecretWord, @"\s+", "");
@@ -45,8 +52,15 @@ namespace Hangman
             }
 
             playzone.Visible = true;
-            Image1.ImageUrl = "~/Images/0.jpg"; ;
-            Infolbl.Text = "";
+            foreach (Control control in playzone.Controls)
+            {
+                if (control is Button)
+                {
+                    ((Button)control).CssClass = "btn btn-primary btn-letter";
+                    ((Button)control).Enabled = true;
+                }
+            }
+            body.Attributes.Add("style", "background-image:url(\"/Images/0.jpg\");");
             Stage = 0;
         }
 
@@ -57,6 +71,8 @@ namespace Hangman
 
             if (SecretWord.Contains(buttonText))
             {
+                clickedButton.CssClass = "btn btn-success btn-letter";
+                clickedButton.Enabled = false;
                 for (int i = 0; i < SecretWord.Length; i++)
                 {
                     if (SecretWord[i] == buttonText[0])
@@ -71,10 +87,21 @@ namespace Hangman
             {
                 Stage++;
                 if(Stage == 10)
+                {
+                    body.Attributes.Add("style", $"background-image:url(\"/Images/10.jpg\");");
                     GameOver();
-                
+                }
+
+
                 else
-                    Image1.ImageUrl = $"~/Images/{Stage.ToString()}.jpg";
+                {
+                    body.Attributes.Add("style", $"background-image:url(\"/Images/{Stage}.jpg\");");
+                    clickedButton.CssClass = "btn btn-danger btn-letter";
+                    clickedButton.Enabled = false;
+                }
+
+                
+
             }
 
             if (SecretWord == lblWord.Text.Replace(" ", ""))
@@ -89,18 +116,18 @@ namespace Hangman
 
         protected void GameOver()
         {
-            Infolbl.Style.Add("text", "danger");
-            Infolbl.Text = "Game Over!";
+            GIF.ImageUrl = "~/Images/gameover.gif";
             playzone.Visible = false;
             Timer1.Enabled = false;
+            GIF.Visible = true;
         }
 
         protected void GameWon()
         {
             playzone.Visible = false;
             Timer1.Enabled = false;
-            Infolbl.Style.Add("text", "danger");
-            Infolbl.Text = "🎉🎉🎉🎉🎊🎊🎊🎊!";
+            GIF.ImageUrl = "~/Images/winner.gif";
+            GIF.Visible = true;
         }
 
 
@@ -132,6 +159,23 @@ namespace Hangman
             }
         }
 
+        protected void RemoveWordBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!Word.Text.Equals(""))
+                {
+                    SQLClass.RemoveWord(Word.Text);
+                }
+                else
+                    Word.Text = ("Cannot be empty");
+            }
+            catch
+            {
+                Word.Text = ("Error");
+            }
+        }
+
         protected void StartBtn_Click(object sender, EventArgs e)
         {
             playzone.Visible = true;
@@ -146,16 +190,20 @@ namespace Hangman
         protected void Timer1_Tick(object sender, EventArgs e)
         {
             int MyCount = Convert.ToInt32(txtCount.Text);
-            if (MyCount > 0)
+            if (MyCount >= 1)
             {
-                MyCount = MyCount - 1;
+                MyCount--;
                 txtCount.Text = MyCount.ToString();
             }
             else if (MyCount == 0)
             {
                 // we are done, stop the timer
                 GameOver();
+                GIF.ImageUrl = "~/Images/timeisup.gif";
+                GIF.Visible = true;
+
                 Timer1.Enabled = false;
+                Response.Redirect(Request.RawUrl); // refresh the page
             }
         }
     }

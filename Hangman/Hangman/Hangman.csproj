@@ -80,8 +80,9 @@
     <Content Include="Images\7.jpg" />
     <Content Include="Images\8.jpg" />
     <Content Include="Images\9.jpg" />
-    <Content Include="Images\Backround0.jpg" />
-    <Content Include="Images\README.txt" />
+    <Content Include="Images\gameover.gif" />
+    <Content Include="Images\timeisup.gif" />
+    <Content Include="Images\winner.gif" />
     <Content Include="Style.css" />
     <Content Include="Web.config" />
   </ItemGroup>

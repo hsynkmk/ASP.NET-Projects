@@ -28,6 +28,13 @@ namespace Hangman
             addWordComm.ExecuteNonQuery();
         }
 
+        public static void RemoveWord(string name)
+        {
+            SqlCommand removeWordComm = new SqlCommand("DELETE FROM Words WHERE  (Name) = (@name)", connection);
+            removeWordComm.Parameters.AddWithValue("@name", name);
+            removeWordComm.ExecuteNonQuery();
+        }
+
         public static string GetWord()
         {
             SqlCommand getWordComm = new SqlCommand("SELECT TOP 1 Name FROM Words ORDER BY NEWID()", connection);
