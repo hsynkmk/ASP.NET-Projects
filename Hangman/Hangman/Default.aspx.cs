@@ -111,9 +111,6 @@ namespace Hangman
 
         }
 
-
-
-
         protected void GameOver()
         {
             GIF.ImageUrl = "~/Images/gameover.gif";
@@ -130,17 +127,10 @@ namespace Hangman
             GIF.Visible = true;
         }
 
-
-
-
-
-
         protected void AddItemBtn_Click(object sender, EventArgs e)
         {
             newWordZone.Visible = true;
         }
-
-
 
         protected void AddWordBtn_Click(object sender, EventArgs e)
         {
