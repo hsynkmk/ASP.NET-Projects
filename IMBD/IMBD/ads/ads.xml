@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>~/ads/ad1.jpg</ImageUrl>
+    <NavigateUrl>http://www.example.com/ad1</NavigateUrl>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/ads/ad2.jpg</ImageUrl>
+    <NavigateUrl>http://www.example.com/ad2</NavigateUrl>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/ads/ad3.jpg</ImageUrl>
+    <NavigateUrl>http://www.example.com/ad3</NavigateUrl>
+  </Ad>
+</Advertisements>
