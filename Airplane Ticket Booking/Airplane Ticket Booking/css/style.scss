@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+label,
+p {
+    margin-bottom: 0rem;
+    padding-bottom: 0rem;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+nav {
+    padding: 16px 0px;
+
+    a {
+        margin-right: 12px;
+        background: rgb(76, 76, 250);
+        color: #fff;
+        padding: 8px 16px;
+        border: 2px solid rgb(76, 76, 250);
+        transition: 300ms all;
+    }
+
+    a:hover {
+        text-decoration: none;
+        border: 2px solid rgb(76, 76, 250);
+        color: rgb(76, 76, 250);
+        background: none;
+    }
+}
+
+.section {
+    min-height: 100%;
+    background: linear-gradient(0deg, rgba(20, 6, 54, 0.9), rgba(21, 6, 75, 0.7)), url(https://veloxtv.com.br/wp-content/uploads/2016/11/20161125_60fe50a2fa234a16a59da4fe0360634f_o500-rs-10.jpg);
+    background-size: cover;
+    width: 100vw;
+    background-position: center;
+
+    .sectionContainer {
+        height: 100vh;
+
+        label {
+            font-size: 13px;
+        }
+
+        .textSection {
+            margin-right: 64px;
+
+            h1 {
+                font-weight: 600;
+                margin-bottom: 32px;
+                color: #fff;
+                font-size: 48px;
+            }
+
+            p {
+                font-size: 14px;
+                color: #fff;
+
+            }
+        }
+
+        .inputSection {
+            background: rgb(76, 76, 250);
+            color: #fff;
+            padding: 32px;
+            width: 100%;
+
+            .radioContainer {
+                margin-bottom: 32px;
+
+                input {
+                    height: 28px;
+                    width: 16px;
+                }
+
+                .radioItems:first-child {
+                    margin-right: 16px;
+                }
+
+                label {
+                    margin-left: 8px;
+                }
+            }
+
+            .selectContainer {
+                margin-bottom: 32px;
+
+                .selectItems {
+                    width: 100%;
+
+                    select {
+                        width: 100%;
+                        border: none;
+                        padding: 16px;
+                    }
+
+                    select:focus {
+                        outline: none;
+                    }
+                }
+
+                .selectItems:first-child {
+                    margin-right: 16px;
+                }
+            }
+
+            .dateContainer {
+                margin-bottom: 32px;
+
+
+                .dateItems {
+                    width: 100%;
+
+                    input {
+                        width: 100%;
+                        padding: 16px;
+                    }
+
+                    input:focus {
+                        outline: none;
+                    }
+                }
+
+                .dateItems:first-child {
+                    margin-right: 12px;
+                }
+            }
+
+            .seferleriGosterContainer {
+
+                .seferleriGoster {
+                    width: 100%;
+                    padding: 16px;
+                    background: rgb(40, 40, 133);
+                    text-decoration: none;
+                    color: #fff;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

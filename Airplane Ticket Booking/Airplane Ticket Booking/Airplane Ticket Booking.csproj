@@ -67,12 +67,86 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Expeditions.aspx" />
+    <Content Include="img\airplane.jpg" />
+    <Content Include="img\plane.jpg" />
+    <Content Include="MainPage.aspx" />
+    <Content Include="MyTickets.aspx" />
+    <Content Include="css\busstyle.css" />
+    <Content Include="css\Style.css" />
+    <Content Include="LogIn.aspx" />
+    <Content Include="Info.aspx" />
+    <Content Include="ContactUs.aspx" />
+    <Content Include="img\bir.png" />
+    <Content Include="img\chair-blue.png" />
+    <Content Include="img\chair-pink.png" />
+    <Content Include="img\chair.png" />
+    <Content Include="SignUp.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Admin.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Expeditions.aspx.cs">
+      <DependentUpon>Expeditions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expeditions.aspx.designer.cs">
+      <DependentUpon>Expeditions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.aspx.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainPage.aspx.designer.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyTickets.aspx.cs">
+      <DependentUpon>MyTickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyTickets.aspx.designer.cs">
+      <DependentUpon>MyTickets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.aspx.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogIn.aspx.designer.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Info.aspx.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Info.aspx.designer.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SQLClass.cs" />
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\style.scss" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
