@@ -1,0 +1,659 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+* {
+    padding: 0px;
+    margin: 0px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.baslabel {
+    border: solid 4px;
+    border-radius:10px;
+    padding: 10px;
+    border-color: #0f1c94;
+}
+
+label,
+p {
+    margin-bottom: 0rem;
+    padding-bottom: 0rem;
+}
+
+body {
+    overflow-x: hidden;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(20, 6, 54, 0.9)), to(rgba(21, 6, 75, 0.7))), url(../img/plane.jpg), no-repeat;
+    background: linear-gradient(0deg, rgba(20, 6, 54, 0.9), rgba(21, 6, 75, 0.7)), url(../img/plane.jpg), no-repeat;
+}
+
+nav {
+    background: #4c4cfa;
+}
+
+    nav a {
+        color: white;
+        background: #0f1c94;
+        border: 2px solid #4c4cfa;
+        -webkit-transition: 300ms all;
+        transition: 300ms all;
+        font-size: 20px;
+        padding: 10px;
+        margin: 10px;
+    }
+
+        nav a:hover {
+            text-decoration: none;
+            border: 2px solid #4c4cfa;
+            background: white;
+            color: #211172;
+        }
+
+label {
+    color: white;
+    font-size: 30px;
+   
+}
+
+.section {
+    min-height: 100%;
+    background-size: cover;
+    width: 100vw;
+    background-position: center;
+    padding-top: 0px;
+    margin-top:10%;
+}
+
+    .section .sectionContainer {
+    }
+
+        .section .sectionContainer label {
+            font-size: 13px;
+        }
+
+        .section .sectionContainer .textSection {
+            margin-right: 64px;
+        }
+
+            .section .sectionContainer .textSection h1 {
+                font-weight: 600;
+                margin-bottom: 32px;
+                color: #fff;
+                font-size: 48px;
+            }
+
+            .section .sectionContainer .textSection p {
+                font-size: 14px;
+                color: #fff;
+            }
+
+        .section .sectionContainer .inputSection {
+            background: #4c4cfa;
+            color: #fff;
+            padding: 32px;
+            width: 100%;
+        }
+
+            .section .sectionContainer .inputSection .radioContainer {
+                margin-bottom: 32px;
+            }
+
+                .section .sectionContainer .inputSection .radioContainer input {
+                    height: 28px;
+                    width: 16px;
+                }
+
+                .section .sectionContainer .inputSection .radioContainer .radioItems:first-child {
+                    margin-right: 16px;
+                }
+
+                .section .sectionContainer .inputSection .radioContainer label {
+                    margin-left: 8px;
+                }
+
+            .section .sectionContainer .inputSection .selectContainer {
+                margin-bottom: 32px;
+            }
+
+                .section .sectionContainer .inputSection .selectContainer .selectItems {
+                    width: 100%;
+                }
+
+                    .section .sectionContainer .inputSection .selectContainer .selectItems select {
+                        width: 100%;
+                        border: none;
+                        padding: 16px;
+                    }
+
+                        .section .sectionContainer .inputSection .selectContainer .selectItems select:focus {
+                            outline: none;
+                        }
+
+                    .section .sectionContainer .inputSection .selectContainer .selectItems:first-child {
+                        margin-right: 16px;
+                    }
+
+            .section .sectionContainer .inputSection .dateContainer {
+                margin-bottom: 32px;
+            }
+
+                .section .sectionContainer .inputSection .dateContainer .dateItems {
+                    width: 100%;
+                }
+
+                    .section .sectionContainer .inputSection .dateContainer .dateItems input {
+                        width: 100%;
+                        padding: 16px;
+                    }
+
+                        .section .sectionContainer .inputSection .dateContainer .dateItems input:focus {
+                            outline: none;
+                        }
+
+                    .section .sectionContainer .inputSection .dateContainer .dateItems:first-child {
+                        margin-right: 12px;
+                    }
+
+            .section .sectionContainer .inputSection .seferleriGosterContainer .seferleriGoster {
+                width: 100%;
+                padding: 16px;
+                background: #282885;
+                text-decoration: none;
+                color: #fff;
+                text-align: center;
+            }
+
+.rezervasyon-container {
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    padding: 24px;
+    align-items:center;
+}
+
+    .rezervasyon-container input {
+        width: 120px;
+        padding: 4px 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-left: 12px;
+        font-size: 14px;
+    }
+
+input:focus, buttons:focus, select:focus {
+    outline: none;
+}
+
+input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    margin: 0px;
+    padding: 0px;
+    margin-right: 24px;
+}
+
+.erkek-radiolar {
+    margin-top: 32px;
+}
+
+.rezervasyon-container .rezervasyon-item {
+    width: 200px;
+    max-width: 300px;
+    margin-bottom: 12px;
+}
+
+.dogumtarihibaslik {
+    margin-top: 24px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.koltuk-numarasi-liste .koltuk-numarasi-baslik {
+    margin-top: 24px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.koltuk-numarasi-liste .koltuk-numarasi-listeler {
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100px;
+}
+
+.uyari {
+    margin: 24px 0px;
+    color: red;
+}
+
+.rezervasyon-olustur {
+    width: 200px !important;
+    padding: 8px;
+    background: #eee;
+    margin-left: 0px !important;
+    cursor: pointer;
+}
+
+.girisSayfasi {
+    padding: 24px;
+    color: #fff;
+}
+
+.girisSayfasiItem {
+    width: 300px;
+    max-width: 300px;
+    margin-bottom: 16px;
+}
+
+    .girisSayfasiItem input {
+        padding: 4px 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-left: 12px;
+        font-size: 14px;
+    }
+
+.girisYapButon {
+    width: 80px;
+    padding: 4px;
+    background: #eee;
+    outline: none;
+    border: 1px solid #ccc;
+    margin-left: auto !important;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.girisUyari {
+    margin: 24px 0px;
+    color: red;
+    margin-left: auto !important;
+}
+
+.biletlerimContainer {
+    width: 100%;
+    max-width: 300px;
+    color: #fff !important;
+    padding: 24px;
+}
+
+    .biletlerimContainer .girisTcText {
+        padding: 4px 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-left: 12px;
+        font-size: 14px;
+        margin: 12px 0px;
+        width: 100%;
+    }
+
+.biletlerimText {
+    color: #fff;
+}
+
+.biletlerimContainer input:last-child {
+    width: 80px;
+    padding: 4px;
+    background: #eee;
+    outline: none;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.iletisimInfos p {
+    text-align: right;
+    margin-bottom: 24px;
+}
+
+    .iletisimInfos p i {
+        margin-left: 16px;
+    }
+
+    .iletisimInfos p:last-child {
+        margin-bottom: 0px;
+    }
+
+.table {
+    margin-top: 80px;
+}
+
+    .table tr, td, th {
+        color: #fff;
+        border: none !important;
+    }
+
+    .table td {
+        width: 50%;
+    }
+
+    .table input {
+        background: none;
+        border: none;
+        color: #fff;
+    }
+
+    .table tbody tr:nth-child(odd) {
+        background-color: #4c4cfa !important;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color: #0000a9 !important;
+    }
+
+.yonetici-container {
+    color: #fff !important;
+    padding-top: 32px;
+}
+
+.yonetici-panel-tarih {
+    font-weight: 600;
+    font-size: 20px;
+    margin: 16px 0px;
+}
+
+.yonetici-container select {
+    padding: 4px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-left: 12px;
+}
+
+.yonetici-container input {
+    padding: 4px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    margin-left: 0px !important;
+}
+
+.yonetici-panel-item {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+    .yonetici-panel-item input {
+        margin-left: 12px;
+    }
+
+.yonetici-tarih {
+    margin-bottom: 16px;
+}
+
+.yonetici-panel-button {
+    background: #eee;
+}
+
+
+
+
+
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+.plane {
+    margin: 20px auto;
+    max-width: 500px;
+    color:white;
+}
+
+.cockpit {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: 5px solid #d8d8d8;
+    &:before
+
+{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 500px;
+    width: 100%;
+    border-radius: 50%;
+    border-right: 5px solid #d8d8d8;
+    border-left: 5px solid #d8d8d8;
+}
+
+h1 {
+    width: 60%;
+    margin: 100px auto 35px auto;
+}
+
+}
+
+.exit {
+    position: relative;
+    height: 50px;
+    &:before, &:after
+
+{
+    content: "EXIT";
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0px 2px;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    display: block;
+    position: absolute;
+    background: green;
+    color: white;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+&:before {
+    left: 0;
+}
+
+&:after {
+    right: 0;
+}
+
+}
+
+.fuselage {
+    border-right: 5px solid #d8d8d8;
+    border-left: 5px solid #d8d8d8;
+}
+
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.row {
+}
+
+.seats {
+    margin-left:50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    color:white;
+}
+
+.seat {
+    display: flex;
+    flex: 0 0 14.28571428571429%;
+    padding: 5px;
+    position: relative;
+    &:nth-child(3)
+
+{
+    margin-right: 14.28571428571429%;
+}
+
+input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+}
+
+    input[type=checkbox]:checked {
+        + label
+
+{
+    background: #bada55;
+    -webkit-animation-name: rubberBand;
+    animation-name: rubberBand;
+    animation-duration: 300ms;
+    animation-fill-mode: both;
+}
+
+}
+
+input[type=checkbox]:disabled {
+    + label
+
+{
+    background: #dddddd;
+    text-indent: -9999px;
+    overflow: hidden;
+    &:after
+
+{
+    content: "X";
+    text-indent: 0;
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+&:hover {
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+}
+}
+
+label {
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5rem;
+    padding: 4px 0;
+    background: #F42536;
+    border-radius: 5px;
+    animation-duration: 300ms;
+    animation-fill-mode: both;
+    &:before
+
+{
+    content: "";
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    top: 1px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    background: rgba(255,255,255,.4);
+    border-radius: 3px;
+}
+
+&:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0px 2px #5C6AFF;
+}
+
+}
+}
+
+@-webkit-keyframes rubberBand {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        -webkit-transform: scale3d(.95, 1.05, 1);
+        transform: scale3d(.95, 1.05, 1);
+    }
+
+    75% {
+        -webkit-transform: scale3d(1.05, .95, 1);
+        transform: scale3d(1.05, .95, 1);
+    }
+
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes rubberBand {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        -webkit-transform: scale3d(.95, 1.05, 1);
+        transform: scale3d(.95, 1.05, 1);
+    }
+
+    75% {
+        -webkit-transform: scale3d(1.05, .95, 1);
+        transform: scale3d(1.05, .95, 1);
+    }
+
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.rubberBand {
+    -webkit-animation-name: rubberBand;
+    animation-name: rubberBand;
+}
+/*# sourceMappingURL=style.css.map */
