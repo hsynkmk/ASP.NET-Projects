@@ -13,17 +13,20 @@
         <nav>
             <div class="container d-flex align-items-center">
                 <a href="MainPage.aspx">Main Page</a>
-                <a ID="MyTicketsHR" runat="server" href="MyTickets.aspx">My Tickets</a>
+                <a id="MyTicketsHR" runat="server" href="MyTickets.aspx">My Tickets</a>
                 <a href="Info.aspx">Info</a>
                 <a href="ContactUs.aspx">Contact Us</a>
-                <a ID="signInHR" runat="server" href="LogIn.aspx">SignIn</a>
-                <a ID="signUpHR" runat="server" href="SignUp.aspx">SignUp</a>
+                <a id="signInHR" runat="server" href="LogIn.aspx">SignIn</a>
+                <a id="signUpHR" runat="server" href="SignUp.aspx">SignUp</a>
                 <asp:LinkButton ID="logOutBtn" runat="server" OnClick="logOutBtn_Click">LogOut</asp:LinkButton>
-                <asp:Label ID="welcomeLBL" CssClass="baslabel fas fa-bus" style="margin-left: 300px;" runat="server" Text="Welcome"></asp:Label>
+                <asp:Label ID="welcomeLBL" CssClass="baslabel fas fa-bus" Style="margin-left: 300px;" runat="server" Text="Welcome"></asp:Label>
             </div>
         </nav>
         <div class="section d-flex align-items-center justify-content-center">
             <div class="girisSayfasi">
+                <div class="text-center">
+                    <h1>Please Sign Up</h1>
+                </div>
                 <div class="girisSayfasiItem d-flex justify-content-between">
                     <asp:Label ID="emailLBL" runat="server" Text="Email"></asp:Label>
                     <asp:TextBox ID="emailTB" runat="server"></asp:TextBox>

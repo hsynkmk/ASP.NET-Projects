@@ -35,19 +35,28 @@ namespace Airplane_Ticket_Booking
 
         protected void seferGosterBtn_Click(object sender, EventArgs e)
         {
-            string gidis = Gidistarihi.Text;
-            string donus = DonusTarihi.Text;
-            string kalkis = neredenDropDown.Text;
-            string varis = nereyeDropDown.Text;
-            bool gidisDonus = gidisdonus.Checked;
-            if (gidisDonus)
+            if (Request.Cookies["UserInfo"] == null)
             {
-                Response.Redirect(String.Format("Expeditions.aspx?kalkisyeri={0}&varisyeri={1}&gidistarihi={2}&donustarihi={3}&gidisDonus=true", kalkis, varis, gidis, donus, gidisdonus));
+                Response.Redirect("~/LogIn.aspx");
             }
             else
             {
-                Response.Redirect(String.Format("Expeditions.aspx?kalkisyeri={0}&varisyeri={1}&gidistarihi={2}", kalkis, varis, gidis));
+                string gidis = Gidistarihi.Text;
+                string donus = DonusTarihi.Text;
+                string kalkis = neredenDropDown.Text;
+                string varis = nereyeDropDown.Text;
+                bool gidisDonus = gidisdonus.Checked;
+
+                if (gidisDonus)
+                {
+                    Response.Redirect(String.Format("Expeditions.aspx?kalkisyeri={0}&varisyeri={1}&gidistarihi={2}&donustarihi={3}&gidisDonus=true", kalkis, varis, gidis, donus, gidisdonus));
+                }
+                else
+                {
+                    Response.Redirect(String.Format("Expeditions.aspx?kalkisyeri={0}&varisyeri={1}&gidistarihi={2}", kalkis, varis, gidis));
+                }
             }
+
         }
     }
 }

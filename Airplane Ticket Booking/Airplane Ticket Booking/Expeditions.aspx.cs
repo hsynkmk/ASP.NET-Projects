@@ -24,28 +24,29 @@ namespace Airplane_Ticket_Booking
             }
         }
 
-        protected void seferTablosu_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void seferTablosu_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-
-        }
-
-        protected void RezervasyonBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         protected void logOutBtn_Click(object sender, EventArgs e)
         {
             HttpCookie userInfoCookie = new HttpCookie("UserInfo");
             userInfoCookie.Expires = DateTime.Now.AddDays(-1d);
             Response.Cookies.Add(userInfoCookie);
             Response.Redirect("~/MainPage.aspx");
+        }
+
+        protected void MakeReservationBtn_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in Page.Controls)
+            {
+                if (c is CheckBox)
+                {
+                    CheckBox checkBox = (CheckBox)c;
+                    if (checkBox.Checked)
+                    {
+                        // Checkbox is checked, do something
+                        string seat = checkBox.ID.Substring(checkBox.ID.Length - 2); ;
+                        
+                    }
+                }
+            }
         }
     }
 }

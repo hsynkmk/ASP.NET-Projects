@@ -43,7 +43,7 @@ namespace Airplane_Ticket_Booking
         public static string LogIn(string email, string password)
         {
             openConn();
-            SqlCommand loginComm = new SqlCommand("SELECT PassengerName FROM Booking WHERE PassengerEmail = @Email AND PassengerPassword = @Password", connection);
+            SqlCommand loginComm = new SqlCommand("SELECT * FROM Booking WHERE PassengerEmail = @Email AND PassengerPassword = @Password", connection);
             loginComm.Parameters.AddWithValue("@Email", email);
             loginComm.Parameters.AddWithValue("@Password", password);
             SqlDataReader reader = loginComm.ExecuteReader();
@@ -56,17 +56,13 @@ namespace Airplane_Ticket_Booking
             return name;
         }
 
-        /*
-            public static void RemoveWord(string name)
+        public static void MakeReservation(string seat)
         {
-            SqlCommand removeWordComm = new SqlCommand("DELETE FROM Words WHERE  (Name) = (@name)", connection);
-            removeWordComm.Parameters.AddWithValue("@name", name);
-            removeWordComm.ExecuteNonQuery();
+            openConn();
+
+
+
+            closeConn();
         }
-*/
-
-
-
-
     }
 }

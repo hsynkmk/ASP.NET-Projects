@@ -48,7 +48,7 @@ namespace Airplane_Ticket_Booking
                 Response.Cookies.Add(userInfoCookie);
 
                 // Redirect to the Default page
-                Response.Redirect("Anasayfa.aspx");
+                Response.Redirect("MainPage.aspx");
             }
             else
                 lblUyari.Text = "Incorrect Email or Password";
