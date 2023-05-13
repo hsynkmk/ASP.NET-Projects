@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,7 +16,18 @@ namespace Airplane_Ticket_Booking
             {
                 signInHR.Visible = false;
                 signUpHR.Visible = false;
-                welcomeLBL.Text = "Welcome, " + Request.Cookies["UserInfo"]["Name"];
+                welcomeLBL.Text = "Welcome, " + Request.Cookies["UserInfo"]["PassengerName"];
+
+                if (!IsPostBack)
+                {
+                    // Retrieve the booking information from the database
+                    string email = Request.Cookies["UserInfo"]["PassengerEmail"];
+                    DataTable dt = SQLClass.MyTicketInformation(email);
+
+                    // Set the GridView's data source and bind it
+                    TicketsGridView.DataSource = dt;
+                    TicketsGridView.DataBind();
+                }
             }
             else
             {
@@ -32,9 +44,5 @@ namespace Airplane_Ticket_Booking
             Response.Redirect("~/MainPage.aspx");
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

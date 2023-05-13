@@ -30,6 +30,7 @@
             </div>
             <div class="exit exit--front fuselage">
             </div>
+            <asp:Panel ID="checkBoxPanel" runat="server">
             <ol class="cabin fuselage">
                 <li class="row row--1">
                     <ol class="seats" type="A">
@@ -285,6 +286,7 @@
                     </ol>
                 </li>
             </ol>
+          </asp:Panel>
                 <div class="exit exit--back fuselage">
                 </div>
         </div>

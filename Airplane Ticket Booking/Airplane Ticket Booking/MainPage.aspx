@@ -11,19 +11,28 @@
 <body>
     <form id="form1" runat="server">
         <nav>
-            <div class="container d-flex align-items-center">
+            <div class="container d-flex align-items-center ">
                 <a href="MainPage.aspx">Main Page</a>
-                <a ID="MyTicketsHR" runat="server" href="MyTickets.aspx">My Tickets</a>
+                <a id="MyTicketsHR" runat="server" href="MyTickets.aspx">My Tickets</a>
                 <a href="Info.aspx">Info</a>
                 <a href="ContactUs.aspx">Contact Us</a>
-                <a ID="signInHR" runat="server" href="LogIn.aspx">SignIn</a>
-                <a ID="signUpHR" runat="server" href="SignUp.aspx">SignUp</a>
+                <a id="signInHR" runat="server" href="LogIn.aspx">SignIn</a>
+                <a id="signUpHR" runat="server" href="SignUp.aspx">SignUp</a>
+
                 <asp:LinkButton ID="logOutBtn" runat="server" OnClick="logOutBtn_Click">LogOut</asp:LinkButton>
-                <asp:Label ID="welcomeLBL" CssClass="baslabel fas fa-bus" style="margin-left: 300px;" runat="server" Text="Welcome"></asp:Label>
+                <asp:Label ID="welcomeLBL" CssClass="baslabel fas fa-bus" Style="margin-left: 300px;" runat="server" Text="Welcome"></asp:Label>
             </div>
         </nav>
+        <div class="text-center m-5">
+            <asp:Button ID="manageBtn" CssClass="btn btn-success" runat="server" visible="False" Text="Manage" OnClick="manageBtn_Click" />
+
+        </div>
+
+        
+
         <div class="section ">
             <div class="container sectionContainer d-flex align-items-center justify-content-center">
+
                 <div class="textSection">
                     <h1>LOOKING FOR THE BEST FLIGHT TICKET? HERE IT IS</h1>
                     <p>We offer all our facilities for a comfortable travel.</p>

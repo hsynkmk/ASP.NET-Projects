@@ -7,6 +7,22 @@
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .tableContainer {
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px 10px rgba(0, 0.3, 0.3, 0.3);
+            width: auto;
+            margin: auto;
+            padding: 30px;
+            margin-top: 10px;
+        }
+
+        .gridView {
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" autocomplete="off" runat="server">
@@ -23,77 +39,57 @@
                     <asp:Label ID="welcomeLBL" CssClass="baslabel fas fa-bus" Style="margin-left: 300px;" runat="server" Text="Welcome"></asp:Label>
                 </div>
             </nav>
-            <div class="section d-flex align-items-center justify-content-center" style="flex-direction: column !important; margin-top: 20px; padding-bottom: 50px">
-                <div class="yonetici-container d-flex align-items-start justify-content-center flex-column">
-                    <div class="d-flex align-items-center yonetici-panel-item ">
-                        <asp:Label ID="Label1" runat="server" Text="Kalkış Yeri"></asp:Label>
-                        <asp:DropDownList ID="kalkisYeriDropDown" runat="server">
-                        </asp:DropDownList>
-                    </div>
-                    <div class="d-flex align-items-center yonetici-panel-item ">
-                        <asp:Label ID="Label2" runat="server" Text="Varış Yeri"></asp:Label>
-                        <asp:DropDownList ID="varisYeriDropdown" runat="server">
-                        </asp:DropDownList>
-                    </div>
-                    <asp:Label ID="Label3" runat="server" Text="Tarih:" CssClass="yonetici-panel-tarih"></asp:Label>
-                    <asp:Calendar ID="seferTarihi" runat="server" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" ShowGridLines="True" Width="220px" CssClass="yonetici-tarih">
-                        <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
-                        <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
-                        <OtherMonthDayStyle ForeColor="#CC9966" />
-                        <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
-                        <SelectorStyle BackColor="#FFCC66" />
-                        <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
-                        <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
-                    </asp:Calendar>
-                    <div class="yonetici-panel-item d-flex align-items-center">
-                        <asp:Label ID="Label4" runat="server" Text="Kalkış Saati"></asp:Label>
-                        <asp:TextBox Style="width: 100px;" ID="kalkisSaatiTextbox" runat="server"></asp:TextBox>
-                    </div>
-                    <div class="d-flex align-items-center yonetici-panel-item">
-                        <asp:CheckBox ID="gidisDonusCheckbox" runat="server" Text="Gidiş-Dönüş" />
-                    </div>
-                    <div class="d-flex align-items-center yonetici-panel-item">
-                        <asp:Label ID="Label5" runat="server" Text="Ücret"></asp:Label>
-                        <asp:TextBox Style="width: 100px; margin-left: 50px;" ID="ucretTextBox" runat="server"></asp:TextBox>
-                    </div>
-                    <asp:Button Style="margin-left: 50px;" ID="Button1" runat="server" OnClick="Button1_Click" Text="Sefer Oluştur" Width="118px" CssClass="yonetici-panel-button" />
-                </div>
-                <div style="margin-top: 10px">
-                    <h1 style="color: white">Kayıtlı Seferler</h1>
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SeferDs" Height="160px" OnRowCommand="GridView1_RowCommand" Width="1053px">
-                        <Columns>
-                            <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" SortExpression="ID" />
-                            <asp:BoundField DataField="KalkisYeri" HeaderText="KalkisYeri" SortExpression="KalkisYeri" />
-                            <asp:BoundField DataField="VarisYeri" HeaderText="VarisYeri" SortExpression="VarisYeri" />
-                            <asp:BoundField DataField="Tarih" HeaderText="Tarih" SortExpression="Tarih" DataFormatString="{0:d}" />
-                            <asp:BoundField DataField="KalkisSaati" HeaderText="KalkisSaati" SortExpression="KalkisSaati" />
-                            <asp:BoundField DataField="GidisDonus" HeaderText="GidisDonus" SortExpression="GidisDonus" />
-                            <asp:BoundField DataField="Ucret" HeaderText="Ucret" SortExpression="Ucret" />
-                            <asp:CommandField ShowDeleteButton="True" DeleteText="Sefer Sil" />
-                        </Columns>
-                    </asp:GridView>
-                    <asp:SqlDataSource ID="SeferDs" runat="server" ConnectionString="Data Source=localhost;Initial Catalog=OtobusRezervasyonSistemi;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [ID], [VarisYeri], [KalkisYeri], CONVERT( date,[Tarih] ) as 'Tarih' , [KalkisSaati], [GidisDonus], [Ucret] FROM [Sefer]"></asp:SqlDataSource>
+            <div class="tableContainer">
+                <h1 style="color: white">Reservations</h1>
+                <asp:GridView ID="InfoGridView" runat="server" CellPadding="2" ForeColor="Blue" GridLines="None" CssClass="gridView" BackColor="#666666" BorderColor="Tan" BorderWidth="1px" AutoGenerateColumns="False">
+                    <Columns>
+                        <asp:BoundField DataField="BookingID" HeaderText="BookingID" />
+                        <asp:BoundField DataField="PassengerID" HeaderText="PassengerID" />
+                        <asp:BoundField DataField="PassenderSeatNum" HeaderText="Seat Number" />
+                        <asp:BoundField DataField="AirplaneCapacity" HeaderText="Capacity" />
+                        <asp:BoundField DataField="PassengerName" HeaderText="Passenger Name" />
+                        <asp:BoundField DataField="PassengerSurname" HeaderText="Passenger Surname" />
+                        <asp:BoundField DataField="PassengerPhone" HeaderText="Phone" />
+                        <asp:BoundField DataField="DeparturePoint" HeaderText="DeparturePoint" />
+                        <asp:BoundField DataField="Destination" HeaderText="Destination" />
+                        <asp:BoundField DataField="Date" HeaderText="Date" />
+                        <asp:BoundField DataField="Price" HeaderText="Price" />
+                    </Columns>
+                    <AlternatingRowStyle BackColor="#333333" />
 
-                </div>
-                <div style="margin-top: 10px">
-                    <h1 style="color: white">Rezervasyonlar</h1>
-                    <asp:GridView ID="rezTablosu" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="RezDS" OnRowCommand="rezTablosu_RowCommand" Width="1048px" OnRowEditing="rezTablosu_RowEditing">
-                        <Columns>
-                            <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" SortExpression="ID" />
-                            <asp:BoundField DataField="YolcuTC" HeaderText="YolcuTC" SortExpression="YolcuTC" />
-                            <asp:BoundField DataField="SeferID" HeaderText="SeferID" SortExpression="SeferID" />
-                            <asp:BoundField DataField="Koltuk" HeaderText="Koltuk" SortExpression="Koltuk" />
-                            <asp:BoundField DataField="RezervasyonTarihi" HeaderText="RezervasyonTarihi" SortExpression="RezervasyonTarihi" />
-                            <asp:CommandField ShowDeleteButton="True" DeleteText="Rezervasyonu Sil" />
-                        </Columns>
-                    </asp:GridView>
-                    <asp:SqlDataSource ID="RezDS" runat="server" ConnectionString="Data Source=localhost;Initial Catalog=OtobusRezervasyonSistemi;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Rezervasyon]"></asp:SqlDataSource>
-
+                    <FooterStyle BackColor="Tan" />
+                    <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                    <PagerStyle BackColor="PaleGoldenrod" ForeColor="Black" HorizontalAlign="Center" />
+                    <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="Black" />
+                    <SortedAscendingCellStyle BackColor="#FAFAE7" />
+                    <SortedAscendingHeaderStyle BackColor="#DAC09E" />
+                    <SortedDescendingCellStyle BackColor="#E1DB9C" />
+                    <SortedDescendingHeaderStyle BackColor="#C2A47B" />
+                </asp:GridView>
+                <div class="text-center m-5">
+                    <asp:Button ID="PDFButton" CssClass="btn btn-success" runat="server" Text="Download as PDF" OnClick="PDFButton_Click" />
                 </div>
             </div>
 
+            <div class="tableContainer">
+                <h1 style="color: white">Users</h1>
+                <asp:GridView ID="UserGridView" runat="server" CellPadding="2" ForeColor="Blue" GridLines="None" CssClass="gridView" BackColor="#666666" BorderColor="Tan" BorderWidth="1px">
+                    <AlternatingRowStyle BackColor="#333333" />
 
+                    <FooterStyle BackColor="Tan" />
+                    <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                    <PagerStyle BackColor="PaleGoldenrod" ForeColor="Black" HorizontalAlign="Center" />
+                    <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="Black" />
+                    <SortedAscendingCellStyle BackColor="#FAFAE7" />
+                    <SortedAscendingHeaderStyle BackColor="#DAC09E" />
+                    <SortedDescendingCellStyle BackColor="#E1DB9C" />
+                    <SortedDescendingHeaderStyle BackColor="#C2A47B" />
+                </asp:GridView>
+            </div>
         </div>
+
+
+
     </form>
 </body>
 </html>

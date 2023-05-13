@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,7 +16,7 @@ namespace Airplane_Ticket_Booking
             {
                 signInHR.Visible = false;
                 signUpHR.Visible = false;
-                welcomeLBL.Text = "Welcome, " + Request.Cookies["UserInfo"]["Name"];
+                welcomeLBL.Text = "Welcome, " + Request.Cookies["UserInfo"]["PassengerName"];
             }
             else
             {
@@ -34,14 +35,30 @@ namespace Airplane_Ticket_Booking
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string value = SQLClass.LogIn(emailTB.Text, passwordTB.Text);
+            DataTable dt = SQLClass.LogIn(emailTB.Text, passwordTB.Text);
 
-            if (value != null)
+            // when user exists
+            if (dt.Rows.Count > 0)
             {
-                // Create a new cookie with the user's email and password
+                DataRow dr = dt.Rows[0];
                 HttpCookie userInfoCookie = new HttpCookie("UserInfo");
-                userInfoCookie.Values["Email"] = emailTB.Text;
-                userInfoCookie.Values["Name"] = value;
+
+                // Write all data from the DataRow into the cookie
+                userInfoCookie.Values["BookingID"] = dr["BookingID"].ToString();
+                userInfoCookie.Values["PassengerID"] = dr["PassengerID"].ToString();
+                userInfoCookie.Values["AirplaneCapacity"] = dr["AirplaneCapacity"].ToString();
+                userInfoCookie.Values["PassenderSeatNum"] = dr["PassenderSeatNum"].ToString();
+                userInfoCookie.Values["PassengerName"] = dr["PassengerName"].ToString();
+                userInfoCookie.Values["PassengerSurname"] = dr["PassengerSurname"].ToString();
+                userInfoCookie.Values["PassengerGender"] = dr["PassengerGender"].ToString();
+                userInfoCookie.Values["PassengerEmail"] = dr["PassengerEmail"].ToString();
+                userInfoCookie.Values["PassengerPassword"] = dr["PassengerPassword"].ToString();
+                userInfoCookie.Values["PassengerPhone"] = dr["PassengerPhone"].ToString();
+                userInfoCookie.Values["DeparturePoint"] = dr["DeparturePoint"].ToString();
+                userInfoCookie.Values["Destination"] = dr["Destination"].ToString();
+                userInfoCookie.Values["Date"] = dr["Date"].ToString();
+                userInfoCookie.Values["Price"] = dr["Price"].ToString();
+
                 userInfoCookie.Expires = DateTime.Now.AddMonths(1);
 
                 // Add the cookie to the response
@@ -51,8 +68,9 @@ namespace Airplane_Ticket_Booking
                 Response.Redirect("MainPage.aspx");
             }
             else
+            {
                 lblUyari.Text = "Incorrect Email or Password";
-
+            }
         }
     }
 }

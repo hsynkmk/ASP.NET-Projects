@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,12 +16,39 @@ namespace Airplane_Ticket_Booking
             {
                 signInHR.Visible = false;
                 signUpHR.Visible = false;
-                welcomeLBL.Text = "Welcome, " + Request.Cookies["UserInfo"]["Name"];
+                welcomeLBL.Text = "Welcome, " + Request.Cookies["UserInfo"]["PassengerName"];
+
+                string kalkisYeri = Request.QueryString["kalkisyeri"];
+                string varisYeri = Request.QueryString["varisyeri"];
+                string gidisTarihi = Request.QueryString["gidistarihi"];
+
+                List<string> seats = SQLClass.IsSeatAvailable(kalkisYeri, varisYeri, gidisTarihi);
+
+                foreach (string seat in seats)
+                {
+                    foreach (Control control in checkBoxPanel.Controls)
+                    {
+                        if (control is CheckBox)
+                        {
+                            CheckBox checkbox = (CheckBox)control;
+                            if (checkbox.ID.EndsWith(seat))
+                            {
+                                checkbox.Enabled = false;
+                                Label seatLabel = (Label)checkBoxPanel.FindControl("Label" + seat);
+                                if (seatLabel != null)
+                                {
+                                    seatLabel.ForeColor = Color.Red;
+                                }
+                            }
+                        }
+                    }
+                }   
             }
             else
             {
                 MyTicketsHR.Visible = false;
                 logOutBtn.Visible = false;
+
             }
         }
 
@@ -34,19 +62,28 @@ namespace Airplane_Ticket_Booking
 
         protected void MakeReservationBtn_Click(object sender, EventArgs e)
         {
-            foreach (Control c in Page.Controls)
+            string kalkisYeri = Request.QueryString["kalkisyeri"];
+            string varisYeri = Request.QueryString["varisyeri"];
+            string gidisTarihi = Request.QueryString["gidistarihi"];
+
+
+            foreach (Control control in checkBoxPanel.Controls)
             {
-                if (c is CheckBox)
+                if (control is CheckBox)
                 {
-                    CheckBox checkBox = (CheckBox)c;
-                    if (checkBox.Checked)
+                    CheckBox checkbox = (CheckBox)control;
+                    if (checkbox.Checked)
                     {
-                        // Checkbox is checked, do something
-                        string seat = checkBox.ID.Substring(checkBox.ID.Length - 2); ;
                         
+                        // Checkbox is checked, do something
+                        string seat = checkbox.ID.Substring(checkbox.ID.Length - 2);
+                        string bookingID = kalkisYeri.Substring(0, 2) + seat +varisYeri.Substring(0, 2) + gidisTarihi;
+                        SQLClass.MakeReservation(seat, bookingID, Request, kalkisYeri, varisYeri, gidisTarihi, "500");
                     }
                 }
             }
+
+            Response.Redirect("~/MyTickets.aspx");
         }
     }
 }

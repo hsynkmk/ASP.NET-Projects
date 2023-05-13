@@ -69,6 +69,15 @@ namespace Airplane_Ticket_Booking
         protected global::System.Web.UI.WebControls.Label welcomeLBL;
 
         /// <summary>
+        /// checkBoxPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel checkBoxPanel;
+
+        /// <summary>
         /// CheckBox1A control.
         /// </summary>
         /// <remarks>

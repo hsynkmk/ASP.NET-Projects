@@ -16,7 +16,15 @@ namespace Airplane_Ticket_Booking
             {
                 signInHR.Visible = false;
                 signUpHR.Visible = false;
-                welcomeLBL.Text = "Welcome, " + Request.Cookies["UserInfo"]["Name"];
+                welcomeLBL.Text = "Welcome, " + Request.Cookies["UserInfo"]["PassengerName"];
+                if(Request.Cookies["UserInfo"]["PassengerName"] == "admin")
+                {
+                    manageBtn.Visible = true;
+                }
+                else
+                {
+                    manageBtn.Visible = false;
+                }
             }
             else
             {
@@ -57,6 +65,11 @@ namespace Airplane_Ticket_Booking
                 }
             }
 
+        }
+
+        protected void manageBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin.aspx");
         }
     }
 }

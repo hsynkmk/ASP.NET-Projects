@@ -21,7 +21,7 @@
                 <a ID="signInHR" runat="server" href="LogIn.aspx">SignIn</a>
                 <a ID="signUpHR" runat="server" href="SignUp.aspx">SignUp</a>
                 <asp:LinkButton ID="logOutBtn" runat="server" OnClick="logOutBtn_Click">LogOut</asp:LinkButton>
-                <asp:Label ID="welcomeLBL" CssClass="baslabel fas fa-bus" style="margin-left: 300px;" runat="server" Text="Welcome"></asp:Label>
+                <asp:Label ID="welcomeLBL" CssClass="baslabel fas " style="margin-left: 300px;" runat="server" Text="Welcome"></asp:Label>
             </div>
         </nav>
 
