@@ -122,6 +122,7 @@
     <Compile Include="SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SQLClass.cs" />
     <Compile Include="ViewJobs.aspx.cs">
       <DependentUpon>ViewJobs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

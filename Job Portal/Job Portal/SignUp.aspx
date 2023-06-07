@@ -37,14 +37,19 @@
                 <p class="point">&#9650;</p>
             </div>
             <div class="form">
-                <asp:Label ID="Label1" class="LoLabel" runat="server" Text="FirstName :"></asp:Label>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           
-                <asp:TextBox ID="TextBox1" class="LoTextBox" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                <asp:Label ID="Label10" class="LoLabel" runat="server" Text="Email :"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="TextBox5" class="LoTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*Email is Required Field " ControlToValidate="TextBox5" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                <br />
+                <asp:Label ID="Label11" class="LoLabel" runat="server" Text="Password :"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="TextBox6" class="LoTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="*Password is Required Field " ControlToValidate="TextBox6" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                <br />
+                <asp:Label ID="Label1" class="LoLabel" runat="server" Text="FirstName :"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="TextBox1" class="LoTextBox" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*Firstname is Required Field " ControlToValidate="TextBox1" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                 <br />
                 <asp:Label ID="Label2" class="LoLabel" runat="server" Text="LastName :"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           
                 <asp:TextBox ID="TextBox2" class="LoTextBox" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*Last name is Required Field " ControlToValidate="TextBox2" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                 <br />
@@ -52,7 +57,6 @@
                 <asp:TextBox ID="TextBox3" class="LoTextBox" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*Required Field " ControlToValidate="TextBox3" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator><br />
                 <asp:Label ID="Label4" class="LoLabel" runat="server" Text="Mobile Number :"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           
                 <asp:TextBox ID="TextBox4" class="LoTextBox" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*Required Field " ControlToValidate="TextBox4" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                 <br />
@@ -61,30 +65,13 @@
                     <asp:ListItem>Male</asp:ListItem>
                     <asp:ListItem>Female</asp:ListItem>
                 </asp:RadioButtonList>
-                <asp:Label ID="Label6" class="LoLabel" runat="server" Text="BirthDate :"></asp:Label>
-                <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="100px" OnSelectionChanged="Calendar1_SelectionChanged" Width="300px" NextPrevFormat="FullMonth" BorderWidth="1px">
-                    <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
-                    <NextPrevStyle Font-Size="8pt" ForeColor="#333333" Font-Bold="True" VerticalAlign="Bottom" />
-                    <OtherMonthDayStyle ForeColor="#999999" />
-                    <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-                    <TitleStyle BackColor="White" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" BorderColor="Black" BorderWidth="4px" />
-                    <TodayDayStyle BackColor="#CCCCCC" />
-                </asp:Calendar>
                 <br />
-                <asp:Label ID="Label7" class="LoLabel" runat="server" Text="Skill :"></asp:Label>
-                <asp:DropDownList ID="DropDownList1" runat="server">
-                    <asp:ListItem>Asp.Net</asp:ListItem>
-                    <asp:ListItem>VB.Net</asp:ListItem>
-                </asp:DropDownList>
+                <asp:Label ID="Label7" class="LoLabel" runat="server" Text="Abilities :"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="TextBox7" class="LoTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="*Abilities is Required Field " ControlToValidate="TextBox7" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                 <br />
-                <asp:Label ID="Label8" class="LoLabel" runat="server" Text="Experiance :"></asp:Label>
-                <asp:DropDownList ID="DropDownList2" runat="server">
-                    <asp:ListItem>1</asp:ListItem>
-                    <asp:ListItem>2</asp:ListItem>
-                    <asp:ListItem>3</asp:ListItem>
-                    <asp:ListItem></asp:ListItem>
-                </asp:DropDownList>
                 <br />
+
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
            
