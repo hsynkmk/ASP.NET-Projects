@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.Security.Policy;
+using System.Net;
+using System.ComponentModel.DataAnnotations;
 
 namespace Job_Portal
 {
@@ -64,16 +66,20 @@ namespace Job_Portal
             return table;
         }
 
-        public static DataTable GetJobs()
+        public static void AddJob(string Company, string Location, string Job, string Salary, string Qualification, string Experiance, string Type, string Description)
         {
             openConn();
-            SqlCommand comm = new SqlCommand("SELECT BookingID, PassengerID, PassenderSeatNum, AirplaneCapacity, PassengerName, PassengerSurname, PassengerPhone, DeparturePoint, Destination, Date, Price FROM Booking WHERE BookingID IS NOT NULL", connection);
-            SqlDataReader reader = comm.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Load(reader);
+            SqlCommand signInComm = new SqlCommand("INSERT INTO dbo.[Job] (Company, Location, Job, Salary, Qualification, Experiance, Type, Description) values (@Company, @Location, @Job, @Salary, @Qualification, @Experiance, @Type, @Description)", connection);
+            signInComm.Parameters.AddWithValue("@Company", Company);
+            signInComm.Parameters.AddWithValue("@Location", Location);
+            signInComm.Parameters.AddWithValue("@Job", Job);
+            signInComm.Parameters.AddWithValue("@Salary", Salary);
+            signInComm.Parameters.AddWithValue("@Qualification", Qualification);
+            signInComm.Parameters.AddWithValue("@Experiance", Experiance);
+            signInComm.Parameters.AddWithValue("@Type", Type);
+            signInComm.Parameters.AddWithValue("@Description", Description);
+            signInComm.ExecuteNonQuery();
             closeConn();
-
-            return dt;
         }
     }
 }
