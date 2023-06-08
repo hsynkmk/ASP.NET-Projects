@@ -12,7 +12,16 @@ namespace Job_Portal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.Cookies["UserInfo"] != null)
+            {
+                signInHR.Visible = false;
+                signUpHR.Visible = false;
+                welcomeLBL.Text = "Welcome, " + Request.Cookies["UserInfo"]["FirstName"];
+            }
+            else
+            {
+                logOutBtn.Visible = false;
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -53,10 +62,13 @@ namespace Job_Portal
 
         }
 
-
-        protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
+        protected void logOutBtn_Click(object sender, EventArgs e)
         {
-
+            HttpCookie userInfoCookie = new HttpCookie("UserInfo");
+            userInfoCookie.Expires = DateTime.Now.AddDays(-1d);
+            Response.Cookies.Add(userInfoCookie);
+            Response.Redirect("~/Default.aspx");
         }
+
     }
 }

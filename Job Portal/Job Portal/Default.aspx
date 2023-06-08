@@ -12,21 +12,23 @@
 <body>
     <form id="form1" runat="server">
         <div class="start">
-            <div style="height: 103px" class="nav">
+            <div style="height: 103px">
                 <asp:Label ID="Label1" runat="server" Text="JobSearch"></asp:Label>
-                <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" OnMenuItemClick="Menu1_MenuItemClick">
-                    <Items>
-                        <asp:MenuItem Text="Home" Value="Home" NavigateUrl="Default.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="Contact Us" Value="Contact Us" NavigateUrl="ContactUs.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="Sign Up" Value="Sign Up" NavigateUrl="SignUp.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="Login" Value="Login" NavigateUrl="Login.aspx"></asp:MenuItem>
-                    </Items>
-                    <StaticMenuItemStyle ForeColor="White" HorizontalPadding="30px" />
-                    <StaticItemTemplate>
-                        <%# Eval("Text") %>
-                    </StaticItemTemplate>
-                </asp:Menu>
+                <nav>
+                    <div class="container d-flex align-items-center">
+                        <a href="Default.aspx">Home</a>
+                        <a href="ContactUs.aspx">Contact Us</a>
+                        <a id="signInHR" runat="server" href="LogIn.aspx">SignIn</a>
+                        <a id="signUpHR" runat="server" href="SignUp.aspx">SignUp</a>
+                        <asp:LinkButton ID="logOutBtn" runat="server" OnClick="logOutBtn_Click">LogOut</asp:LinkButton>
+                        <asp:Label ID="welcomeLBL" Style="margin-left: 300px;" runat="server" Text="Welcome"></asp:Label>
+                    </div>
+                </nav>
+                <div class="text-center m-5">
+                    <asp:Button ID="manageBtn" CssClass="btn btn-success" runat="server" Visible="False" Text="Manage" OnClick="manageBtn_Click" />
+                </div>
             </div>
+
             <br />
             <br />
             <div style="height: 196px">
@@ -43,6 +45,7 @@
                         <asp:ListItem>Fresher</asp:ListItem>
                         <asp:ListItem>Full-time</asp:ListItem>
                         <asp:ListItem>Software Developer</asp:ListItem>
+                        <asp:ListItem>Data Analyst</asp:ListItem>
                     </asp:DropDownList>
                     <asp:TextBox ID="TextBox1" CssClass="form-control" Font-Size="small" runat="server" placeholder="Location"></asp:TextBox>
                     <asp:Button ID="BtnSearch" runat="server" CssClass="btn btn-primary" Font-Size="Small" Text="Search" OnClick="BtnSearch_Click" />

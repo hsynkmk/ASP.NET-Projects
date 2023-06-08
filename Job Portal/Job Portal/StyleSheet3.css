@@ -4,6 +4,28 @@ body {
     background-image: url('./images/back.jpg');
 }
 
+nav {
+    background: #4c4cfa;
+}
+
+    nav a {
+        color: white;
+        background: #0f1c94;
+        border: 2px solid #4c4cfa;
+        -webkit-transition: 300ms all;
+        transition: 300ms all;
+        font-size: 20px;
+        padding: 10px;
+        margin: 10px;
+    }
+
+        nav a:hover {
+            text-decoration: none;
+            border: 2px solid #4c4cfa;
+            background: white;
+            color: #211172;
+        }
+
 .page {
     position: relative;
     height: 650px;

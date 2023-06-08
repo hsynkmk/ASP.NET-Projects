@@ -1,19 +1,35 @@
 body {
+    padding: 50px;
     font-family: 'Roboto', sans-serif;
     background-image: url('./images/back.jpg');
 }
 
-#Menu1 {
-    margin-left: 320px;
-    font-weight: 600;
-    font-size: 16px;
-    margin-top: 10px;
+nav {
+    background: #4c4cfa;
 }
+
+    nav a {
+        color: white;
+        background: #0f1c94;
+        border: 2px solid #4c4cfa;
+        -webkit-transition: 300ms all;
+        transition: 300ms all;
+        font-size: 20px;
+        padding: 10px;
+        margin: 10px;
+    }
+
+        nav a:hover {
+            text-decoration: none;
+            border: 2px solid #4c4cfa;
+            background: white;
+            color: #211172;
+        }
 
 .start {
     padding: 40px;
-    color:black;
-    
+    color: black;
+    height: 200px;
 }
 
 #Label1 {
@@ -28,9 +44,6 @@ body {
     font-size: 22px;
 }
 
-.nav {
-    display: flex;
-}
 
 .styled-table {
     border-collapse: collapse;

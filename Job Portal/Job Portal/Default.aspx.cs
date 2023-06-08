@@ -13,23 +13,21 @@ namespace Job_Portal
         {
             if (Request.Cookies["UserInfo"] != null)
             {
-                /*
-                if (Menu1.Items.Contains(new MenuItem
+                signInHR.Visible = false;
+                signUpHR.Visible = false;
+                welcomeLBL.Text = "Welcome, " + Request.Cookies["UserInfo"]["FirstName"];
+                if (Request.Cookies["UserInfo"]["FirstName"] == "admin")
                 {
-                    Text = "Sign Up",
-                    Value = "Sign Up"
-                })) { 
+                    manageBtn.Visible = true;
                 }
-                    Menu1.Items.RemoveAt(1);
-                Menu1.Items.RemoveAt(2);
-                Menu1.Items.Add(new MenuItem
+                else
                 {
-                    Text = "Log Out",
-                    Value = "Log Out"
-                });
-
-                */
-
+                    manageBtn.Visible = false;
+                }
+            }
+            else
+            {
+                logOutBtn.Visible = false;
             }
             bindJoblist();
         }
@@ -39,25 +37,25 @@ namespace Job_Portal
             JobDataList.DataBind();
         }
 
-        protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
-        {
-            if (e.Item.Value == "Log Out")
-            {
-                HttpCookie userInfoCookie = new HttpCookie("UserInfo");
-                userInfoCookie.Expires = DateTime.Now.AddDays(-1d);
-                Response.Cookies.Add(userInfoCookie);
-                Response.Redirect("~/Default.aspx");
-            }
-        }
 
         protected void BtnSearch_Click(object sender, EventArgs e)
         {
-
+            Session["Job"] = DropDownList1.Text;
+            Session["Location"] = TextBox1.Text;
+            Response.Redirect("ViewJobs.aspx");
         }
 
-        protected void BtnLogin_Click(object sender, EventArgs e)
+        protected void logOutBtn_Click(object sender, EventArgs e)
         {
+            HttpCookie userInfoCookie = new HttpCookie("UserInfo");
+            userInfoCookie.Expires = DateTime.Now.AddDays(-1d);
+            Response.Cookies.Add(userInfoCookie);
+            Response.Redirect("~/Default.aspx");
+        }
 
+        protected void manageBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin.aspx");
         }
     }
 }

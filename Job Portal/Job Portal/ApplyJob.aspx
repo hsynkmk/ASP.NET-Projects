@@ -11,20 +11,18 @@
 <body>
     <form id="form1" runat="server">
         <div class="start">
-            <div style="height: 103px" class="nav">
+            <div style="height: 103px">
                 <asp:Label ID="Label3" runat="server" Text="JobSearch"></asp:Label>
-                <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" OnMenuItemClick="Menu1_MenuItemClick">
-                    <Items>
-                        <asp:MenuItem Text="Home" Value="Home" NavigateUrl="Default.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="Contact Us" Value="Contact Us" NavigateUrl="ContactUs.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="Sign Up" Value="Sign Up" NavigateUrl="SignUp.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="Login" Value="Login" NavigateUrl="Login.aspx"></asp:MenuItem>
-                    </Items>
-                    <StaticMenuItemStyle ForeColor="White" HorizontalPadding="30px" />
-                    <StaticItemTemplate>
-                        <%# Eval("Text") %>
-                    </StaticItemTemplate>
-                </asp:Menu>
+                <nav>
+                    <div class="container d-flex align-items-center">
+                        <a href="Default.aspx">Home</a>
+                        <a href="ContactUs.aspx">Contact Us</a>
+                        <a id="signInHR" runat="server" href="LogIn.aspx">SignIn</a>
+                        <a id="signUpHR" runat="server" href="SignUp.aspx">SignUp</a>
+                        <asp:LinkButton ID="logOutBtn" runat="server" OnClick="logOutBtn_Click">LogOut</asp:LinkButton>
+                        <asp:Label ID="welcomeLBL" Style="margin-left: 300px;" runat="server" Text="Welcome"></asp:Label>
+                    </div>
+                </nav>
             </div>
         </div>
         <asp:Label ID="Label1" runat="server" Text="Label" ForeColor="Black" Font-Size="Large"></asp:Label><br />

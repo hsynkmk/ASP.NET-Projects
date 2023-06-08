@@ -3,19 +3,34 @@ body {
     background-image: url('./images/back.jpg');
 }
 
+nav {
+    background: #4c4cfa;
+}
+
+    nav a {
+        color: white;
+        background: #0f1c94;
+        border: 2px solid #4c4cfa;
+        -webkit-transition: 300ms all;
+        transition: 300ms all;
+        font-size: 20px;
+        padding: 10px;
+        margin: 10px;
+    }
+
+        nav a:hover {
+            text-decoration: none;
+            border: 2px solid #4c4cfa;
+            background: white;
+            color: #211172;
+        }
+
 .start {
     background-image: url('./images/main_img.jpg');
     padding: 40px;
     height: 550px;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-#Menu1 {
-    margin-left: 550px;
-    font-weight: 600;
-    font-size: 16px;
-    margin-top: 10px;
 }
 
 #Label1 {
@@ -57,9 +72,6 @@ body {
     justify-content: space-between;
 }
 
-.nav {
-    display: flex;
-}
 
 #Button2 {
     background-color: #00cccc;
