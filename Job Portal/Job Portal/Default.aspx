@@ -50,12 +50,9 @@
             </div>
         </div>
         <br />
-        <asp:SqlDataSource ID="JobDTS" runat="server"
-            ConnectionString="<%$ ConnectionStrings:Database %>"
-             SelectCommand="select * from Job"></asp:SqlDataSource>
         <div class="container">
             <div class="row d-flex justify-content-center">
-                <asp:DataList ID="JobDataList" Font-Size="Medium" CssClass=" " DataSourceID="JobDTS" DataKeyField="Company"
+                <asp:DataList ID="JobDataList" Font-Size="Medium" DataKeyField="Company"
                     RepeatColumns="1" RepeatDirection="Vertical" runat="server">
                     <ItemTemplate>
                         <div class="card">

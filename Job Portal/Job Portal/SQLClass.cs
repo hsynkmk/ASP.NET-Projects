@@ -53,6 +53,16 @@ namespace Job_Portal
             return table;
         }
 
+        public static DataTable GetJobList()
+        {
+            openConn();
+            SqlCommand comm = new SqlCommand("SELECT * FROM Job", connection);
+            SqlDataReader reader = comm.ExecuteReader();
+            DataTable table = new DataTable();
+            table.Load(reader);
+            closeConn();
+            return table;
+        }
 
         /// ////////////////
 

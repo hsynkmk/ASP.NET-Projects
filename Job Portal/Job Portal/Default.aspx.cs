@@ -31,6 +31,12 @@ namespace Job_Portal
                 */
 
             }
+            bindJoblist();
+        }
+        protected void bindJoblist()
+        {
+            JobDataList.DataSource = SQLClass.GetJobList();
+            JobDataList.DataBind();
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
