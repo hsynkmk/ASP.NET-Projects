@@ -68,6 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApplyJob.aspx" />
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="ContactUs.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="images\back.png" />

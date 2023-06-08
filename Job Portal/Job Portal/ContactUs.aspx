@@ -11,8 +11,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="start">
-            <div style="height: 103px" class="nav">
-                <asp:Label ID="Label1" runat="server" Text="JobSearch"></asp:Label>
+            <div style="height: 103px" class="nav" >
                 <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" OnMenuItemClick="Menu1_MenuItemClick">
                     <Items>
                         <asp:MenuItem Text="Home" Value="Home" NavigateUrl="Default.aspx"></asp:MenuItem>
