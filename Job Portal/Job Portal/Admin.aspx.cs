@@ -29,7 +29,10 @@ namespace Job_Portal
             DescriptionTB.Text = "";
             ExperianceTB.Text = "";
             JobTB.Text = "";
-
+            LocationTB.Text = "";
+            QualificationTB.Text = "";
+            SalaryTB.Text = "";
+            
         }
 
         protected void GV_RowDeleting(object sender, GridViewDeleteEventArgs e)
