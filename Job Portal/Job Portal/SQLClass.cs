@@ -81,5 +81,38 @@ namespace Job_Portal
             signInComm.ExecuteNonQuery();
             closeConn();
         }
+        public static void DeleteJob(string company) 
+        {
+            openConn();
+            SqlCommand comm = new SqlCommand("DELETE FROM dbo.[Job] WHERE Company = @Company", connection);
+            comm.Parameters.AddWithValue("@Company", company);
+            comm.ExecuteNonQuery();
+            closeConn();
+        }
+
+        public static DataTable jobSearch(string jobType, string location)
+        {
+            openConn();
+            SqlCommand comm = new SqlCommand("SELECT * FROM Job WHERE Type = @Type OR Location = @Location", connection);
+            comm.Parameters.AddWithValue("@Type", jobType);
+            comm.Parameters.AddWithValue("@Location", location);
+            SqlDataReader reader = comm.ExecuteReader();
+            DataTable table = new DataTable();
+            table.Load(reader);
+            closeConn();
+            return table;
+        }
+
+        public static DataTable jobInfo(string company)
+        {
+            openConn();
+            SqlCommand comm = new SqlCommand("SELECT * FROM Job WHERE Company = @Company", connection);
+            comm.Parameters.AddWithValue("@Company", company);
+            SqlDataReader reader = comm.ExecuteReader();
+            DataTable table = new DataTable();
+            table.Load(reader);
+            closeConn();
+            return table;
+        }
     }
 }

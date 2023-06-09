@@ -1,31 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="Job_Portal.SignUp" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="Job_Portal.SignUp1" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link rel="stylesheet" href="StyleSheet3.css" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" />
-
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div class="start">
-            <div style="height: 103px">
-                <asp:Label ID="Label6" runat="server" Text="JobSearch"></asp:Label>
-                <nav>
-                    <div class="container d-flex align-items-center">
-                        <a href="Default.aspx">Home</a>
-                        <a href="ContactUs.aspx">Contact Us</a>
-                        <a id="signInHR" runat="server" href="LogIn.aspx">SignIn</a>
-                        <a id="signUpHR" runat="server" href="SignUp.aspx">SignUp</a>
-                        <asp:LinkButton ID="logOutBtn" runat="server" OnClick="logOutBtn_Click">LogOut</asp:LinkButton>
-                        <asp:Label ID="welcomeLBL" Style="margin-left: 300px;" runat="server" Text="Welcome"></asp:Label>
-                    </div>
-                </nav>
-            </div>
-        </div>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <%--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" />--%>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div style="background-image: url('./images/back.jpg');">
+        <br />
         <div class="page" style="height: 800px;">
             <div class="back-img" style="height: 160px;">
                 <div class="sign-in-text" style="top: 80px;">
@@ -33,52 +13,145 @@
                 </div>
                 <div class="layer">
                 </div>
-                <!--/.layer-->
-                <p class="point">&#9650;</p>
+
             </div>
             <div class="form">
-                <asp:Label ID="Label10" class="LoLabel" runat="server" Text="Email :"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox5" class="LoTextBox" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*Email is Required Field " ControlToValidate="TextBox5" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:Label ID="Label10" class="LoLabel" runat="server" Text="Email :"></asp:Label>
+                <asp:TextBox ID="EmailTB" TextMode="Email" class="LoTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" Font-Size="Smaller" ErrorMessage="*Email is Required Field " ControlToValidate="EmailTB" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                 <br />
-                <asp:Label ID="Label11" class="LoLabel" runat="server" Text="Password :"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox6" class="LoTextBox" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="*Password is Required Field " ControlToValidate="TextBox6" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:Label ID="Label11" class="LoLabel" runat="server" Text="Password :"></asp:Label>
+                <asp:TextBox ID="PasswordTB" TextMode="Password" class="LoTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" Font-Size="Smaller" ErrorMessage="*Password is Required Field " ControlToValidate="PasswordTB" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                 <br />
-                <asp:Label ID="Label1" class="LoLabel" runat="server" Text="FirstName :"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox1" class="LoTextBox" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*Firstname is Required Field " ControlToValidate="TextBox1" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:Label ID="Label1" class="LoLabel" runat="server" Text="FirstName :"></asp:Label>
+                <asp:TextBox ID="FirstNameTB" class="LoTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Font-Size="Smaller" ErrorMessage="*Firstname is Required Field " ControlToValidate="FirstNameTB" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                 <br />
-                <asp:Label ID="Label2" class="LoLabel" runat="server" Text="LastName :"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox2" class="LoTextBox" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*Last name is Required Field " ControlToValidate="TextBox2" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:Label ID="Label2" class="LoLabel" runat="server" Text="LastName :"></asp:Label>
+                <asp:TextBox ID="LastNameTB" class="LoTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" Font-Size="Smaller" ErrorMessage="*Last name is Required Field " ControlToValidate="LastNameTB" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                 <br />
-                <asp:Label ID="Label3" class="LoLabel" runat="server" Text="Address :"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox3" class="LoTextBox" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*Required Field " ControlToValidate="TextBox3" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator><br />
-                <asp:Label ID="Label4" class="LoLabel" runat="server" Text="Mobile Number :"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox4" class="LoTextBox" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*Required Field " ControlToValidate="TextBox4" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:Label ID="Label3" class="LoLabel" runat="server" Text="Address :"></asp:Label>
+                <asp:TextBox ID="AddressTB" class="LoTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" Font-Size="Smaller" ErrorMessage="*Required Field " ControlToValidate="AddressTB" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator><br />
+                <asp:Label ID="Label4" class="LoLabel" runat="server" Text="Mobile Number :"></asp:Label>
+                <asp:TextBox ID="PhoneTB" TextMode="Phone" class="LoTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" Font-Size="Smaller" ErrorMessage="*Required Field " ControlToValidate="PhoneTB" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                 <br />
                 <asp:Label ID="Label5" class="LoLabel" runat="server" Text="Gender :"></asp:Label>
-                <asp:RadioButtonList ID="RadioButtonList1" runat="server" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged">
-                    <asp:ListItem>Male</asp:ListItem>
-                    <asp:ListItem>Female</asp:ListItem>
+                <asp:RadioButtonList ID="GenderRadBtnL" ForeColor="#2b2b2b" Font-Bold="true" runat="server" >
+                    <asp:ListItem Value="Male">Male</asp:ListItem>
+                    <asp:ListItem Value="Female">Female</asp:ListItem>
                 </asp:RadioButtonList>
-                <br />
-                <asp:Label ID="Label7" class="LoLabel" runat="server" Text="Abilities :"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox7" class="LoTextBox" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="*Abilities is Required Field " ControlToValidate="TextBox7" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" Font-Size="Smaller" ErrorMessage="*Gender is Required Field " ControlToValidate="GenderRadBtnL" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:Label ID="Label7" class="LoLabel" runat="server" Text="Abilities :"></asp:Label>
+                <asp:TextBox ID="AbltTB" class="LoTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" Font-Size="Smaller" ErrorMessage="*Abilities is Required Field " ControlToValidate="AbltTB" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                 <br />
                 <br />
 
                 <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
            
-                <asp:Button ID="Button1" runat="server" Text="Sign Up" OnClick="Button1_Click" />
+                <asp:Button ID="SingUpBTN" CssClass="btn1" runat="server" Text="Sign Up" OnClick="SingUpBTN_Click"  />
                 <br />
             </div>
         </div>
-    </form>
-</body>
-</html>
+        <br />
+    </div>
+
+    <style>
+        .page {
+            position: relative;
+            height: 650px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 0px 30px 125px -5px #000;
+        }
+
+        .back-img {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background: url('images/head.jpg')no-repeat center center;
+            background-size: cover;
+        }
+
+        .active {
+            padding-left: 25px;
+            color: #fff;
+        }
+
+        h2 {
+            padding-left: 15px;
+            font-size: 35px;
+            text-transform: uppercase;
+            display: inline-block;
+            font-weight: 300;
+            text-shadow:0px 0px 5px #000;
+        }
+
+        .sign-in-text {
+            top: 175px;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .layer {
+            background-color: rgba(33, 150, 243, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .point {
+            position: absolute;
+            z-index: 1;
+            color: #fff;
+            top: 235px;
+            padding-left: 50px;
+            font-size: 20px;
+        }
+
+        .form {
+            padding: 70px 90px 70px 90px;
+        }
+
+        .btn1 {
+            width: 100%;
+            height: 75px;
+            position: absolute;
+            bottom: 0;
+            left: 0px;
+            color: white;
+            border: none;
+            border-radius: 0px;
+            background-color: rgba(63, 78, 191, 1);
+        }
+
+        .btn2 {
+            background-color: #00cccc;
+            width: 100px;
+            height: 40px;
+            margin-left: 10px;
+            border: none;
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .LoLabel {
+            font-size: 15px;
+            font-weight: 600;
+            color:#2b2b2b;
+        }
+
+        .LoTextBox {
+            border: none;
+            border-bottom: 1px solid lightgrey;
+            margin-bottom: 10px;
+        }
+    </style>
+</asp:Content>

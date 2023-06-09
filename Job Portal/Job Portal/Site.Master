@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Job_Portal.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>JobSearch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/zephyr/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><h3 class="text-white">JobSearch</h3></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarColor01">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active text-white" href="Default.aspx">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="ContactUs.aspx">Contact Us</a>
+                            </li>
+                            <li id="signin" runat="server" visible="true" class="nav-item">
+                                <a class="nav-link text-white" href="LogIn.aspx">SignIn</a>
+                            </li>
+                            <li id="signup" runat="server" visible="true" class="nav-item">
+                                <a class="nav-link text-white" href="SignUp.aspx">SignUp</a>
+                            </li>
+                        </ul>
+                        <ul id="UserLogin" class="navbar-nav  justify-content-end" runat="server" visible="false">
+                            <li class="nav-item">
+                                <asp:Label ID="username" runat="server" CssClass="nav-link text-white" Text="Name"></asp:Label>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton ID="SignOutBTN" CssClass="nav-link text-white" OnClick="SignOutBTN_Click" runat="server">Sign Out</asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

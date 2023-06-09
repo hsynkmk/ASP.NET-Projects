@@ -11,7 +11,7 @@ namespace Job_Portal
 {
 
 
-    public partial class Admin
+    public partial class Admin1
     {
 
         /// <summary>
@@ -24,49 +24,40 @@ namespace Job_Portal
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Label1 control.
+        /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
-        /// signInHR control.
+        /// UserLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor signInHR;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl UserLogin;
 
         /// <summary>
-        /// signUpHR control.
+        /// username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor signUpHR;
+        protected global::System.Web.UI.WebControls.Label username;
 
         /// <summary>
-        /// logOutBtn control.
+        /// SignOutBTN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton logOutBtn;
-
-        /// <summary>
-        /// welcomeLBL control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label welcomeLBL;
+        protected global::System.Web.UI.WebControls.LinkButton SignOutBTN;
 
         /// <summary>
         /// CompanyTB control.
@@ -123,13 +114,13 @@ namespace Job_Portal
         protected global::System.Web.UI.WebControls.TextBox ExperianceTB;
 
         /// <summary>
-        /// TypeTB control.
+        /// JobTypeDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TypeTB;
+        protected global::System.Web.UI.WebControls.DropDownList JobTypeDDL;
 
         /// <summary>
         /// DescriptionTB control.
@@ -147,6 +138,24 @@ namespace Job_Portal
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SaveBTN;
+        protected global::System.Web.UI.WebControls.LinkButton SaveBTN;
+
+        /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+
+        /// <summary>
+        /// GV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GV;
     }
 }

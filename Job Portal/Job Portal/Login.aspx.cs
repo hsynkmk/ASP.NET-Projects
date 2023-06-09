@@ -8,25 +8,16 @@ using System.Web.UI.WebControls;
 
 namespace Job_Portal
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Login1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Cookies["UserInfo"] != null)
-            {
-                signInHR.Visible = false;
-                signUpHR.Visible = false;
-                welcomeLBL.Text = "Welcome, " + Request.Cookies["UserInfo"]["FirstName"];
-            }
-            else
-            {
-                logOutBtn.Visible = false;
-            }
+
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void SignInBTN_Click(object sender, EventArgs e)
         {
-            DataTable dt = SQLClass.LogIn(TextBox1.Text, TextBox2.Text);
+            DataTable dt = SQLClass.LogIn(EmailTB.Text, PasswordTB.Text);
 
             if (dt.Rows.Count > 0)
             {
@@ -43,18 +34,21 @@ namespace Job_Portal
                 // Add the cookie to the response
                 Response.Cookies.Add(userInfoCookie);
 
-                // Redirect to the Default page
-                Response.Redirect("Default.aspx");
+                if (dr["UserType"].ToString() == "Admin")
+                {
+                    Response.Redirect("Admin.aspx");
+                }
+                else
+                {
+                    // Redirect to the Default page
+                    Response.Redirect("Default.aspx");
+                }
+                
+            }
+            else
+            {
+                Response.Write("<script>alert('You are not registered yet');</script>");
             }
         }
-
-        protected void logOutBtn_Click(object sender, EventArgs e)
-        {
-            HttpCookie userInfoCookie = new HttpCookie("UserInfo");
-            userInfoCookie.Expires = DateTime.Now.AddDays(-1d);
-            Response.Cookies.Add(userInfoCookie);
-            Response.Redirect("~/Default.aspx");
-        }
-
     }
 }
