@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12 order-lg-1 order-2 align-self-center  mb-lg-0 mb-5">
                     <div class="site-header-inner  mt-lg-0 mb-5">
-                        <p class="text-white">We have 850,000 Job offers that you deserve</p>
+                        <p class="text-white">We have lots of job offers that you deserve</p>
                         <h1 class="text-white" style="font-weight: 600; font-size: 70px;">Your Dream</h1>
                         <h3 class="text-white" style="font-weight: lighter; font-size: 40px;">Job is Waiting</h3>
                     </div>
@@ -20,12 +20,13 @@
                     <div class="banner-image">
                         <div style="height: 57px; position: absolute; background-color: white; margin-top: 75px; margin-left: 250px; width: 50%; padding: 10px; display: flex; justify-content: space-between;">
                             <asp:DropDownList ID="JobTypeDDL" Font-Size="small" runat="server" CssClass="form-control">
-                                <asp:ListItem>Job Type</asp:ListItem>
-                                <asp:ListItem>Software Engineer</asp:ListItem>
-                                <asp:ListItem>Fresher</asp:ListItem>
-                                <asp:ListItem>Full-time</asp:ListItem>
+                                <asp:ListItem>Jobs</asp:ListItem>
+                                <asp:ListItem>Game Developer</asp:ListItem>
+                                <asp:ListItem>UI Designer</asp:ListItem>
+                                <asp:ListItem>.Net Developer</asp:ListItem>
                                 <asp:ListItem>Software Developer</asp:ListItem>
                                 <asp:ListItem>Data Analyst</asp:ListItem>
+                                <asp:ListItem>Mobile Developer</asp:ListItem>
                             </asp:DropDownList>
                             <asp:TextBox ID="LocationTB" CssClass="form-control" Font-Size="small" runat="server" placeholder="Location"></asp:TextBox>
                             <asp:Button ID="SearchBTN" runat="server" CssClass="btn btn-primary" Font-Size="Small" Text="Search" OnClick="SearchBTN_Click" />
@@ -59,15 +60,19 @@
         <div class="inner-container">
             <h1>About Us</h1>
             <p class="text">
-                We're looking to grow our teams with people who share our energy and enthusiasm for creating the best experience for job seekers and employers.
-
-Our mission is to create products that provide opportunities for all job seekers. To do this, we hire Indeedians of all backgrounds to mirror the job seekers we support. That's why Inclusion and Belonging are core values inside JobSearch.
+                At ComJob, we are dedicated to fostering a team of individuals who share our passion and drive in delivering the ultimate job search 
+                experience for both job seekers and employers. Our mission is centered around creating innovative products that empower 
+                and connect individuals with the best employment opportunities. To accomplish this, we actively seek out diverse and 
+                talented individuals who mirror the job seekers we support. Inclusion and Belonging form the very foundation of our 
+                core values at ComJob, as we believe that by embracing diverse perspectives and backgrounds, we can better understand 
+                and cater to the unique needs of our users. Together, we strive to build a platform that provides equal opportunities 
+                for all job seekers, making ComJob the go-to destination for finding the perfect job match.
    
             </p>
             <div class="skills">
-                <span>Communication</span>
-                <span>Leadership</span>
-                <span>Massive Network</span>
+                <span>Development</span>
+                <span>Cyber Security</span>
+                <span>Hardware</span>
             </div>
         </div>
     </div>
@@ -81,9 +86,9 @@ Our mission is to create products that provide opportunities for all job seekers
                 <div class="col">
                     <h6>About Us</h6>
                     <p class="text-justify">
-                        JobSearch.com
+                        comjobs.com
                             <br />
-                        With JobSearch, you can search millions of jobs online to find the next step in your career.
+                        With ComJobs, you can search lots of jobs online to find the next step in your career.
                             <br />
                         With tools for job search, resumes, company reviews and more, ...
                     </p>
@@ -97,16 +102,13 @@ Our mission is to create products that provide opportunities for all job seekers
                         <div class="col">
                             <ul class="footer-links">
                                 <li class="nav-item"><a class="nav-link" href="#">Developer</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">UI Design</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Senior Manager</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Marketing Head</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Android</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Templates</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Game Developer</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">UI Designer</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">.Net Developer</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Mobile Developer</a></li>
                             </ul>
                         </div>
                     </div>
-
-
                 </div>
 
                 <div class="col d-flex justify-content-center">
@@ -117,8 +119,7 @@ Our mission is to create products that provide opportunities for all job seekers
                         <div class="col">
                             <ul class="footer-links">
                                 <li class="nav-item"><a class="nav-link" href="#about-section">About Us</a></li>
-                                <li class="nav-item"><a class="nav-link" href="Contactus.aspx">Contact Us</a></li>
-                                <li class="nav-item"><a class="nav-link" href="sitemap.aspx">Sitemap</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ContactUs.aspx">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>

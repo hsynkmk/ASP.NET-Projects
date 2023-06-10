@@ -21,15 +21,8 @@ namespace Job_Portal
         }
         protected void SearchBTN_Click(object sender, EventArgs e)
         {
-            if(JobTypeDDL.SelectedItem.Text == "Job Type")
-            {
-                bindDataList();
-            }
-            else 
-            {
-                JobDataList.DataSource = SQLClass.jobSearch(JobTypeDDL.SelectedItem.Text, LocationTB.Text);
-                JobDataList.DataBind();
-            } 
+            JobDataList.DataSource = SQLClass.jobSearch(JobTypeDDL.SelectedItem.Text, LocationTB.Text);
+            JobDataList.DataBind();
         }
     }
 }

@@ -68,7 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin.aspx" />
-    <Content Include="Admin1.aspx" />
     <Content Include="ApplyJob.aspx" />
     <Content Include="ContactUs.aspx" />
     <Content Include="Default.aspx" />
@@ -82,10 +81,8 @@
     <Content Include="JobDetail.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="SignUp.aspx" />
-    <Content Include="StyleSheet1.css" />
     <Content Include="StyleSheet2.css" />
     <Content Include="StyleSheet3.css" />
-    <Content Include="ViewJobs.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -95,13 +92,6 @@
     </Compile>
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin1.aspx.cs">
-      <DependentUpon>Admin1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin1.aspx.designer.cs">
-      <DependentUpon>Admin1.aspx</DependentUpon>
     </Compile>
     <Compile Include="ApplyJob.aspx.cs">
       <DependentUpon>ApplyJob.aspx</DependentUpon>
@@ -154,13 +144,6 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="SQLClass.cs" />
-    <Compile Include="ViewJobs.aspx.cs">
-      <DependentUpon>ViewJobs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ViewJobs.aspx.designer.cs">
-      <DependentUpon>ViewJobs.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

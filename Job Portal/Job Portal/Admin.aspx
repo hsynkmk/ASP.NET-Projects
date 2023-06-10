@@ -87,12 +87,11 @@
                         <div class="form-group">
                             <label class="col-form-label">Job Type</label>
                             <asp:DropDownList class="form-control" ID="JobTypeDDL" runat="server">
-                                <asp:ListItem Value=" ">Job Type</asp:ListItem>
-                                <asp:ListItem Value="Software Engineer">Software Engineer</asp:ListItem>
-                                <asp:ListItem Value="Fresher">Fresher</asp:ListItem>
                                 <asp:ListItem Value="Full-time">Full-time</asp:ListItem>
-                                <asp:ListItem Value="Software Developer">Software Developer</asp:ListItem>
-                                <asp:ListItem Value="Data Analyst">Data Analyst</asp:ListItem>
+                                <asp:ListItem Value="Part-time">Part-time</asp:ListItem>
+                                <asp:ListItem Value="Temporary">Temporary</asp:ListItem>
+                                <asp:ListItem Value="Project based">Project based</asp:ListItem>
+                                <asp:ListItem Value="Freelance">Freelance</asp:ListItem>
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator ControlToValidate="JobTypeDDL" runat="server" ForeColor="Red" Font-Size="X-Small" ErrorMessage="*Job-Type required" ValidationGroup="addForm"></asp:RequiredFieldValidator>
                         </div>

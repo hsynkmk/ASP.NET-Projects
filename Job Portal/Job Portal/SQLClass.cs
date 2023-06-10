@@ -93,9 +93,28 @@ namespace Job_Portal
         public static DataTable jobSearch(string jobType, string location)
         {
             openConn();
-            SqlCommand comm = new SqlCommand("SELECT * FROM Job WHERE Type = @Type OR Location = @Location", connection);
-            comm.Parameters.AddWithValue("@Type", jobType);
-            comm.Parameters.AddWithValue("@Location", location);
+            SqlCommand comm;
+
+            if (jobType == "Jobs")
+            {
+                comm = new SqlCommand("SELECT * FROM Job WHERE Location LIKE '%' + @Location + '%'", connection);
+                comm.Parameters.AddWithValue("@Location", location);
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(location))
+                {
+                    comm = new SqlCommand("SELECT * FROM Job WHERE Job LIKE '%' + @Job + '%'", connection);
+                    comm.Parameters.AddWithValue("@Job", jobType);
+                }
+                else
+                {
+                    comm = new SqlCommand("SELECT * FROM Job WHERE Job LIKE '%' + @Job + '%' OR Location LIKE '%' + @Location + '%'", connection);
+                    comm.Parameters.AddWithValue("@Job", jobType);
+                    comm.Parameters.AddWithValue("@Location", location);
+                }
+            }
+
             SqlDataReader reader = comm.ExecuteReader();
             DataTable table = new DataTable();
             table.Load(reader);
