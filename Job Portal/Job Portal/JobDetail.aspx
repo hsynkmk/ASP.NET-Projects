@@ -27,58 +27,54 @@
             </div>
         </div>
         <br />
-        <footer class="site-footer">
-            <div class=" container ">
-                <div class="row">
-                    <div class="col">
-                        <h6>About Us</h6>
-                        <p class="text-justify">
-                            JobSearch.com
+    <footer class="site-footer">
+        <div class=" container ">
+            <div class="row">
+                <div class="col">
+                    <h6>About Us</h6>
+                    <p class="text-justify">
+                        comjobs.com
                             <br />
-                            With JobSearch, you can search millions of jobs online to find the next step in your career.
+                        With ComJobs, you can search lots of jobs online to find the next step in your career.
                             <br />
-                            With tools for job search, resumes, company reviews and more, ...
-                        </p>
-                    </div>
+                        With tools for job search, resumes, company reviews and more, ...
+                    </p>
+                </div>
 
-                    <div class="col d-flex justify-content-center">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h6>Categories</h6>
-                            </div>
-                            <div class="col">
-                                <ul class="footer-links">
-                                    <li class="nav-item"><a class="nav-link" href="#">Developer</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">UI Design</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Senior Manager</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Marketing Head</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Android</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Templates</a></li>
-                                </ul>
-                            </div>
+                <div class="col d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h6>Categories</h6>
                         </div>
-
-
-                    </div>
-
-                    <div class="col d-flex justify-content-center">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h6>Quick Links</h6>
-                            </div>
-                            <div class="col">
-                                <ul class="footer-links">
-                                    <li class="nav-item"><a class="nav-link" href="#about-section">About Us</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="Contactus.aspx">Contact Us</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="sitemap.aspx">Sitemap</a></li>
-                                </ul>
-                            </div>
+                        <div class="col">
+                            <ul class="footer-links">
+                                <li class="nav-item"><a class="nav-link" href="#">Developer</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Game Developer</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">UI Designer</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">.Net Developer</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Mobile Developer</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <hr />
+
+                <div class="col d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h6>Quick Links</h6>
+                        </div>
+                        <div class="col">
+                            <ul class="footer-links">
+                                <li class="nav-item"><a class="nav-link" href="#about-section">About Us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ContactUs.aspx">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </footer>
+            <hr />
+        </div>
+    </footer>
     </div>
 
 

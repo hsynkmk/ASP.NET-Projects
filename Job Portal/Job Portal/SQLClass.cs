@@ -109,7 +109,7 @@ namespace Job_Portal
                 }
                 else
                 {
-                    comm = new SqlCommand("SELECT * FROM Job WHERE Job LIKE '%' + @Job + '%' OR Location LIKE '%' + @Location + '%'", connection);
+                    comm = new SqlCommand("SELECT * FROM Job WHERE Job LIKE '%' + @Job + '%' AND Location LIKE '%' + @Location + '%'", connection);
                     comm.Parameters.AddWithValue("@Job", jobType);
                     comm.Parameters.AddWithValue("@Location", location);
                 }
