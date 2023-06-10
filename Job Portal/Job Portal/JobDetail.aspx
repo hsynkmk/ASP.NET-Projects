@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="background-image: url('./images/team.jpg');">
+    <div style="background-image: url('./images/apply.jpg'); background-size:contain">
         <br />
         <div class="container">
             <div class="card border-info mb-3" style="max-width: 50rem; background-color: rgba(255,255,255,0.7);">

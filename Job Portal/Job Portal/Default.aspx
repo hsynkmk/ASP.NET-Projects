@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="background-image: url(images/main_img.jpg); background-size: cover; height: 550px">
+    <div style="background-image: url(images/main.jpg); background-size: cover; height: 550px">
         <br />
         <br />
         <br />
@@ -12,7 +12,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12 order-lg-1 order-2 align-self-center  mb-lg-0 mb-5">
                     <div class="site-header-inner  mt-lg-0 mb-5">
                         <p class="text-white">We have lots of job offers that you deserve</p>
-                        <h1 class="text-white" style="font-weight: 600; font-size: 70px;">Your Dream</h1>
+                        <h1 class="text-white" style="font-weight: 600; font-size: 70px;">Your IT Dream</h1>
                         <h3 class="text-white" style="font-weight: lighter; font-size: 40px;">Job is Waiting</h3>
                     </div>
                 </div>
@@ -131,11 +131,11 @@
 
     <style>
         .about-section {
-            background: url(./images/team.jpg) no-repeat left;
+            background: url(./images/teams.jpg) no-repeat left;
             background-size: 55%;
             background-color: #fdfdfd;
             overflow: hidden;
-            height: 400px;
+            height: 430px;
             padding: 50px 0;
         }
 
@@ -144,7 +144,7 @@
             float: right;
             background-color: #fdfdfd;
             padding: 20px;
-            height: 300px;
+            height: 500px;
         }
 
             .inner-container h1 {

@@ -71,18 +71,14 @@
     <Content Include="ApplyJob.aspx" />
     <Content Include="ContactUs.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="images\apply.jpg" />
     <Content Include="images\back.png" />
-    <Content Include="images\head.jpg" />
-    <Content Include="images\login.jpg" />
-    <Content Include="images\main_img.jpg" />
-    <Content Include="images\sign.jfif" />
-    <Content Include="images\sign.jpg" />
-    <Content Include="images\team.jpg" />
+    <Content Include="images\heads.jpg" />
+    <Content Include="images\main.jpg" />
+    <Content Include="images\teams.jpg" />
     <Content Include="JobDetail.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="SignUp.aspx" />
-    <Content Include="StyleSheet2.css" />
-    <Content Include="StyleSheet3.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

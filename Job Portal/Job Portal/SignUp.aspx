@@ -73,7 +73,7 @@
             position: relative;
             width: 100%;
             height: 250px;
-            background: url('images/head.jpg')no-repeat center center;
+            background: url('images/heads.jpg')no-repeat center center;
             background-size: cover;
         }
 
