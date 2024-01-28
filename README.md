@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the repository for the Web-Based Technologies class, featuring a collection of projects developed using ASP.NET. These projects were created as part of the coursework, showcasing a range of web-based applications. Although rapidly developed, each project demonstrates key concepts and skills acquired during the class.
+Welcome to the repository for the Web-Based Technologies class, featuring a collection of projects developed using ASP.NET. These projects were created as part of the coursework, showcasing a range of web-based applications. Although rapidly developed, each project demonstrates key concepts and skills acquired during the class. <br>
 **Note:** Databases are included for required projects
 
 ## Projects
